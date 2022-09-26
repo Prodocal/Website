@@ -1,2 +1,17 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import Login from "../pages/loginpage.svelte";
+    import Home from "../pages/homepage.svelte";
+</script>
+
+<main>
+    <Login/>
+    <!-- <Home/> -->
+</main>
+
+<style>
+    main{
+        width: 100vw;
+        height: 100vh;
+        background-color: aliceblue;
+    }
+</style>

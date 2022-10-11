@@ -1,5 +1,3 @@
-
-
 <div class="navbar rounded bg-white" id="navbar">
     <div class="flex-none">
         <button class="btn btn-square btn-ghost">
@@ -26,7 +24,3 @@
     </div>
     
 </div>
-
-
-
-

@@ -2,7 +2,7 @@
   <div id="main_card">
     <div class="card w-96 glass text-primary-content">
       <div class="card-body items-center">
-        <h2 class="card-title">Account Registration</h2>
+        <h1 class="card-title">Account Registration</h1>
 
         <div class="form-control w-full max-w-xs">
           <div class="card-actions justify-start">  
@@ -10,10 +10,14 @@
             <input type="text" placeholder="Type your username" class="input w-full max-w-xs" />
           </div>
 
+          <br>
+
           <div class="card-actions justify-start">
             <p>Email Address:</p>
             <input type="text" placeholder="Type your email address" class="input w-full max-w-xs" />
           </div>
+
+          <br>
 
           <div class="card-actions justify-start">
             <p>Password:</p>
@@ -22,8 +26,10 @@
           </div>
         </div>
 
+        <br>
+
         <div class="card-actions">
-          <button class="btn btn-ghost">Create Account</button>
+          <button class="btn btn-neutral">Create Account</button>
         </div>
 
       </div>
@@ -47,8 +53,13 @@
     /*opacity: .8;*/
   }
 
-  p, h2 {
+  p, h1 {
     font-family: 'Inter', sans-serif;
+    color: black;
+  }
+
+  h1 {
+    font-size: 22px;
   }
 
   p {

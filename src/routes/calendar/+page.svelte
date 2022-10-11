@@ -1,7 +1,7 @@
 <script>
-	let i = 5;
-
+	let widths = [5, 222, 438, 660, 875, 1100, 1313]
 </script>
+
 <layout></layout>
 
 <calendar></calendar>
@@ -47,11 +47,26 @@ font-weight: 700;">2022</big_font>
 <unimportant_font style="left: 660px; top: 81px;">28</unimportant_font>
 <unimportant_font style="left: 875px; top: 81px;">29</unimportant_font>
 <unimportant_font style="left: 1100px; top: 81px;">30</unimportant_font>
+<small_font style="left: 1313px; top: 81px;">1</small_font>
 
-    {#each Array(7) as _, index}
-        <small_font style="left: {i}px; top: 216px;">{index + 1}</small_font>
-        i += 216;
-    {/each}
+{#each widths as w, i}
+    <small_font style="left: {w}px; top: 212px">{i + 2}</small_font>
+{/each}
+
+{#each widths as w, i}
+    <small_font style="left: {w}px; top: 354px">{i + 9}</small_font>
+{/each}
+
+{#each widths as w, i}
+    <small_font style="left: {w}px; top: 506px">{i + 16}</small_font>
+{/each}
+
+{#each widths as w, i}
+    <small_font style="left: {w}px; top: 648px">{i + 23}</small_font>
+{/each}
+
+<small_font style="left: 5px; top: 794px;">30</small_font>
+<small_font style="left: 222px; top: 794px;">31</small_font>
 
 <unimportant_font style="left: 439px; top: 792px;">1</unimportant_font>
 <unimportant_font style="left: 668px; top: 792px;">2</unimportant_font>

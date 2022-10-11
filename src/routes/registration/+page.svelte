@@ -1,4 +1,4 @@
-<main>
+<main id="pink_background">
   <div id="main_card">
     <div class="card w-96 bg-neutral text-primary-content">
       <div class="card-body items-center">
@@ -44,6 +44,12 @@
 
   #main_card {
     left: 200px;
+    opacity: .8;
+  }
+
+  #pink_background {
+        background-image: url("https://khaodesign.com/wp-content/uploads/2017/03/beautiful-color-gradients-backgrounds-158-angel-care.png%22");
+        background-size: cover;
   }
 
 </style>

@@ -1,6 +1,6 @@
 <main id="pink_background">
   <div id="main_card">
-    <div class="card w-96 bg-neutral text-primary-content">
+    <div class="card w-96 glass text-primary-content">
       <div class="card-body items-center">
         <h2 class="card-title">Account Registration</h2>
 
@@ -23,7 +23,7 @@
         </div>
 
         <div class="card-actions">
-          <button class="btn btn-primary">Create Account</button>
+          <button class="btn btn-ghost">Create Account</button>
         </div>
 
       </div>
@@ -44,7 +44,15 @@
 
   #main_card {
     left: 200px;
-    opacity: .8;
+    /*opacity: .8;*/
+  }
+
+  p, h2 {
+    font-family: 'Inter', sans-serif;
+  }
+
+  p {
+    font-weight: 700;
   }
 
   #pink_background {

@@ -11,6 +11,10 @@
         <nav>   
             <a href="/">home</a>
             <a href="/login">login</a>
+            <a href="/registration">registration</a>
+            <a href="/create">create</a>
+            <a href="/findfeature">findfeature</a>
+            <a href="/calendar">calendar</a>
         </nav> 
     </div>
     <div class="flex-none">

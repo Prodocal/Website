@@ -56,7 +56,7 @@
   }
 
   #pink_background {
-        background-image: url("https://khaodesign.com/wp-content/uploads/2017/03/beautiful-color-gradients-backgrounds-158-angel-care.png%22");
+        background-image: url('../background/pink_image.png');
         background-size: cover;
   }
 

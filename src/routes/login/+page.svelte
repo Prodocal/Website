@@ -16,20 +16,19 @@
         </label>
         <input type="text" placeholder="Type your username" class="input input-bordered w-full max-w-xs" />
         <label class="label"> </label>
-
-
+    
         <label class="label">
             <span class="label-text" style='color: black;'>Password</span>
         </label>
         <input type="password" placeholder="Type your password" class="input input-bordered w-full max-w-xs" />
         <label class="label"> 
-            <span class="label-text-alt"></span>
-            <span class="label-text-alt" style='color: black;'>Forgot Password?</span>
+            <span class="label-text-alt"> <a class="link link-hover" href="/registration">Create account</a> </span>
+            <span class="label-text-alt"> <a class="link link-hover">Forgot password?</a></span>
         </label>
-
+        
         <br>
-        <button class="btn btn-wide" style="background-color:neutral;"> Login </button>
-
+        <button class="btn" style="background-color:neutral;"> <a href="/calendar">Login</a> </button>
+        
         </div>
         </div>
     </div>
@@ -44,7 +43,7 @@
     }
 
     #pink_background{
-        background-image: url("https://khaodesign.com/wp-content/uploads/2017/03/beautiful-color-gradients-backgrounds-158-angel-care.png");
+        background-image: url('../background/pink_image.png');
         background-size: cover;
     }
 

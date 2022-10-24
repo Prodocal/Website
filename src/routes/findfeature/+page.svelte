@@ -1,6 +1,6 @@
 
 <script>
-    import Users from "/lib/users.svelte";
+    import Users from "./lib/users.svelte";
 </script>
 
 <main>

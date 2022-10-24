@@ -5,8 +5,9 @@
 body{
     width: 100vw;
     height: 100vh;
-    padding: 8px 8px 8px 8px;  
+    padding: 10px 10px 10px 10px;  
     font-family: 'Inter', sans-serif;
     color: rgba(28, 28, 28, 0.759);
-    font-weight: 400;
+    font-weight: 800;
+    background: white;
 }

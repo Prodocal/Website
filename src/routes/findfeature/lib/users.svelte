@@ -1,6 +1,6 @@
 
 <script>
-	import UserIcon from "../assets/usericon.svg";
+	import UserIcon from "../../components/img/usericon.svg";
 
 	let member = [
 		{	

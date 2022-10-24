@@ -1,57 +1,63 @@
-<html data-theme="dark"></html>
-
-<div id="pink_background">
-    <div id="divBox">
-    
-        <div class="card w-96 glass text-primary-content" id= "Alexyu">
-        <div class="card-body">
-        
-        <h2 class="card-title" style='color: black;font-size: 35px;'> Welcome</h2>
-        
-        <h2 class="card-title" style='color: black;font-size: 35px;'>Back </h2>
-        <br>
-
-        <label class="label">
-            <span class="label-text" style='color: black;'>Username</span>
-        </label>
-        <input type="text" placeholder="Type your username" class="input input-bordered w-full max-w-xs" />
-        <label class="label"> </label>
-    
-        <label class="label">
-            <span class="label-text" style='color: black;'>Password</span>
-        </label>
-        <input type="password" placeholder="Type your password" class="input input-bordered w-full max-w-xs" />
-        <label class="label"> 
-            <span class="label-text-alt"> <a class="link link-hover" href="/registration">Create account</a> </span>
-            <span class="label-text-alt"> <a class="link link-hover">Forgot password?</a></span>
-        </label>
-        
-        <br>
-        <button class="btn" style="background-color:neutral;"> <a href="/calendar">Login</a> </button>
-        
+<main id="pink_background">
+    <div id="main_card">
+      <div class="card w-96 glass text-primary-content">
+        <div class="card-body items-center">
+          <h2 class="card-title">Account Registration</h2>
+  
+          <div class="form-control w-full max-w-xs">
+            <div class="card-actions justify-start">  
+              <p>Username:</p>
+              <input type="text" placeholder="Type your username" class="input w-full max-w-xs" />
+            </div>
+  
+            <div class="card-actions justify-start">
+              <p>Email Address:</p>
+              <input type="text" placeholder="Type your email address" class="input w-full max-w-xs" />
+            </div>
+  
+            <div class="card-actions justify-start">
+              <p>Password:</p>
+              <input type="text" placeholder="Type your password" class="input w-full max-w-xs" />
+              <input type="text" placeholder="Retype your password" class="input w-full max-w-xs" />
+            </div>
+          </div>
+  
+          <div class="card-actions">
+            <button class="btn btn-ghost">Create Account</button>
+          </div>
+  
         </div>
-        </div>
+      </div>
     </div>
-</div>
-
-<style>
-    #divBox{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
+  </main>
+  
+  
+  <style>
+  
+    main {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-
-    #pink_background{
-        background-image: url('../background/pink_image.png');
-        background-size: cover;
+  
+    #main_card {
+      left: 200px;
+      /*opacity: .8;*/
     }
-
-    #Alexyu{
-        opacity: 0.83;
+  
+    p, h2 {
+      font-family: 'Inter', sans-serif;
     }
-
-</style>
-
-
-
+  
+    p {
+      font-weight: 700;
+    }
+  
+    #pink_background {
+          background-image: url("https://khaodesign.com/wp-content/uploads/2017/03/beautiful-color-gradients-backgrounds-158-angel-care.png%22");
+          background-size: cover;
+    }
+  
+  </style>

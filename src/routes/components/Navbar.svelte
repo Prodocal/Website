@@ -14,10 +14,8 @@
         <div class="flex-none gap-2">
             <nav>
                 <a href="/login">login</a>
-                <a href="/registration">registration</a>
                 <a href="/create">create</a>
                 <a href="/findfeature">findfeature</a>
-                <a href="/calendar">calendar</a>
             </nav>
             
             <div class="dropdown dropdown-end">

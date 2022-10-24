@@ -4,7 +4,18 @@
         "Signup",
     ];
     let activeTab = 1;
-    
+    var username = "";
+    var password = "";
+
+    function validateLogin(username, password){
+        let obj ={
+            "users":{
+                "username": username,
+                "password": password,
+            },
+        };
+        console.log(obj);
+    }
 </script>
 
 <main>
@@ -18,22 +29,22 @@
 
             <!-- login -->
             <div class="card-body" class:hidden={activeTab != 0}>
-                <div class="form-control w-full max-w-xs">
+                <form class="form-control w-full max-w-xs" on:submit|preventDefault={validateLogin(username, password)}>
                     <div class="card-actions justify-start">  
                         <p></p>
-                        <input type="text" placeholder="username" class="input w-full max-w-xs"/>
+                        <input type="text" placeholder="username" class="input w-full max-w-xs" bind:value={username}/>
                     </div>
 
                     <div class="card-actions justify-start">
                         <p></p>
-                        <input type="text" placeholder="password" class="input w-full max-w-xs" />
+                        <input type="text" placeholder="password" class="input w-full max-w-xs" bind:value={password}/>
                         <p></p>
                     </div>
 
                     <div class="card-actions">
-                        <button class="btn btn-primary">Login</button>
+                        <button type= "submit" class="btn btn-primary">Login</button>
                     </div>
-                </div>
+                </form>
             </div>
 
             <!-- signup -->

@@ -14,7 +14,7 @@
             <a href="/registration">registration</a>
             <a href="/create">create</a>
             <a href="/findfeature">findfeature</a>
-            <a href="/calendar">calendar</a>
+            <a href="/calendar2">calendar</a>
         </nav> 
     </div>
     <div class="flex-none">

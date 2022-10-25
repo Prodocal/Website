@@ -20,6 +20,8 @@
     // 0 as the parameter gives the last day of last month, so to get the current month we +1 the month index
     $: numdays = new Date(year, monthIndex+1, 0).getDate(); // so this returns the number of days in the month
 
+    $: lastMonthDays = new Date(year, monthIndex, 0).getDate();
+
     let currentDay = date.getDate(); // gets the current day
 
     const goPrevMonth = () => {
@@ -39,15 +41,16 @@
 
         return monthIndex++;
     }
-                    
 
+  
+            
     $: console.log(`${monthIndex} --- First Day Index: ${firstday}-- Number of Days: ${numdays} --- ${month} ${currentDay}`)
 
 </script>
 
 <main>
     
-    <div class="month">
+    <div id="month">
     <ul>
         <li class="prev" on:click={goPrevMonth}>&#10094;</li>
         <li class="next" on:click={goNextMonth}>&#10095;</li>
@@ -55,7 +58,7 @@
     </ul>
     </div>
 
-    <ul class="weekdays">
+    <ul id="weekdays">
         <li>Su</li>
         <li>Mo</li>
         <li>Tu</li>
@@ -65,10 +68,12 @@
         <li>Sa</li>
     </ul>
 
-    <ul class="days">
+    <ul id="days">
         {#each Array(42) as _, i}
-            {#if i < firstday || i >= numdays + firstday}
-                <li>&nbsp;</li>
+            {#if i < firstday}
+                <li style="color:gray;"> {(lastMonthDays - firstday+1) + i} </li>
+            {:else if i >= numdays + firstday}
+                <li style="color:gray;"> {i - (numdays + firstday-1)} </li>
             {:else}
                 <li class:active={i === currentDay+(firstday-1)}> {i - firstday+1}  </li> 
             {/if}
@@ -80,10 +85,10 @@
 <style> /* style tag is used to define style information. Specifys how HTML elements should render in main. */
 
     ul {list-style-type: none;}
-    main {font-family: Verdana, sans-serif;}
+    main {font-family: sans-serif, 'Trebuchet MS';}
 
     /* Month header */
-    .month {
+    #month {
     padding: 70px 25px;
     width: 100%;
     background-image: url('../background/pink_image.png');
@@ -92,12 +97,12 @@
     }
 
     /* Month list */
-    .month ul {
+    #month ul {
     margin: 0;
     padding: 0;
     }
 
-    .month ul li {
+    #month ul li {
     color: white;
     font-size: 20px;
     text-transform: uppercase;
@@ -105,14 +110,14 @@
     }
 
     /* Previous button inside month header */
-    .month .prev {
+    #month .prev {
     float: left;
     padding-top: 10px;
     cursor: pointer;
     }
 
     /* Next button */
-    .month .next {
+    #month .next {
     float: right;
     padding-top: 10px;
     cursor: pointer;
@@ -120,13 +125,13 @@
     }
 
     /* Weekdays (Mon-Sun) */
-    .weekdays {
+    #weekdays {
     margin: 0;
     padding: 10px 0;
     background-color:rgb(75, 74, 74);
     }
 
-    .weekdays li {
+    #weekdays li {
     display: inline-block;
     width: 13.6%;
     color: #ffffff;
@@ -134,29 +139,29 @@
     }
 
     /* Days (1-31) */
-    .days {
+    #days {
     padding: 10px 0;
-    background: #eee;
+    background: rgb(255, 255, 255);
     margin: 0;
     }
 
-    .days li {
+    #days li {
     list-style-type: none;
     display: inline-block;
     border: 1px solid black;
-    padding: 35px;
+    padding: 40px;
     width: 13.6%;
     text-align: center;
     margin-bottom: 5px;
-    font-size:12px;
-    color: #777;
+    font-size:13px;
+    color: rgb(0, 0, 0);
     }
 
     /* Highlight the "current" day */
     .active {
     padding: 5px;
-    background: #3d3d3d2d;
-    color: white !important
+    background: #fda3956e;
+    color: rgb(0, 0, 0) !important
     }
 
 </style>

@@ -1,7 +1,7 @@
+
 <html data-theme="dark"></html>
 
 <script>
-
 </script>
 
 <main>
@@ -40,6 +40,7 @@
             </div>
             </div>
         </div>
+      </div>
     </div>
 </main>
 
@@ -50,17 +51,12 @@
         justify-content: center;
         height: 100vh;
     }
-
-    #pink_background{
-        background-image: url('../background/pink_image.png');
-        background-size: cover;
+  
+    p {
+      font-weight: 700;
     }
-
     #transparency{
         opacity: 0.83;
     }
-
-</style>
-
-
-
+  
+  </style>

@@ -3,9 +3,8 @@
         "Login",
         "Signup",
     ];
-    let activeTab = 1;
-    var username = "";
-    var password = "";
+    let activeTab = 0;
+    var username, password, email, phone, firstname, lastname;
 
     function validateLogin(username, password){
         let obj ={
@@ -16,6 +15,22 @@
         };
         console.log(obj);
     }
+
+    function newUser(username, password, email, phone, firstname, lastname){
+        let obj ={
+            "users":{
+                "username": username,
+                "password": password,
+                "email": email,
+                "phone": phone,
+                "First Name": firstname,
+                "Last Name": lastname,
+            },
+        };
+
+        console.log(obj);
+    }
+
 </script>
 
 <main>
@@ -42,44 +57,40 @@
                     </div>
 
                     <div class="card-actions">
-                        <button type= "submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                 </form>
             </div>
 
             <!-- signup -->
             <div class="card-body" class:hidden={activeTab != 1}>
-                <div class="form-control w-full max-w-xs">
+                <form class="form-control w-full max-w-xs" on:submit|preventDefault={newUser(username, password, email, phone, firstname, lastname)}>
                     <p>Basic Info</p>
                     <div class="card-actions justify-start">
-                        <input type="text" placeholder="First Name" class="input w-full max-w-xs flex-1" />
-                        <input type="text" placeholder="Last Name" class="input w-full max-w-xs flex-1" />
+                        <input type="text" placeholder="First Name" class="input w-full max-w-xs flex-1" bind:value={firstname} />
+                        <input type="text" placeholder="Last Name" class="input w-full max-w-xs flex-1" bind:value={lastname}/>
                     </div>
                     <div class="card-actions justify-start">
                         <p></p>
-                        <input type="text" placeholder="Email" class="input w-full max-w-xs" />
-                        <input type="text" placeholder="Phone Number" class="input w-full max-w-xs" />
+                        <input type="text" placeholder="Email" class="input w-full max-w-xs" bind:value={email}/>
+                        <input type="text" placeholder="Phone Number" class="input w-full max-w-xs" bind:value={phone}/>
                     </div>
 
                     <p>Create Account</p>
                     <div class="card-actions justify-start">
-                        <input type="text" placeholder="Username" class="input w-full max-w-xs" />
-                    </div>
-                    <div class="card-actions justify-start">  
-                        <p></p>
-                        <input type="text" placeholder="Type your username" class="input w-full max-w-xs"/>
+                        <input type="text" placeholder="Username" class="input w-full max-w-xs" bind:value={username}/>
                     </div>
                     <div class="card-actions justify-start">
                         <p></p>
                         <input type="text" placeholder="password" class="input w-full max-w-xs" />
-                        <input type="text" placeholder="re-enter password" class="input w-full max-w-xs" />
+                        <input type="text" placeholder="re-enter password" class="input w-full max-w-xs" bind:value={password}/>
                         <p></p>
                     </div>
-                    <div class="card-actions">
+                    <div class="card-actions justify-center">
                         <p></p>
-                        <button class="btn btn-primary">Signup</button>
+                        <button type="submit" class="btn btn-primary">Signup</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -88,5 +99,8 @@
 <style>
     main{
         color: aliceblue;
+    }
+    p{
+        color: black;
     }
 </style>

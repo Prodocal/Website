@@ -1,6 +1,5 @@
 
 <main>
-
     <div id="myDIV" class="header">
         <h2>My To Do List</h2>
         <input type="text" id="myInput" placeholder="Title...">
@@ -10,14 +9,11 @@
     <ul id="myUL">
         <li>example</li>
     </ul>
-
-
 </main>
 
 
 <style>
-
-        /* Include the padding and border in an element's total width and height */
+    /* Include the padding and border in an element's total width and height */
     * {
     box-sizing: border-box;
     }

@@ -8,7 +8,7 @@
 <main>
     <div class="navbar rounded-2xl bg-gradient-to-r from-[#FAE1A7] to-[#FFAB9F] w-full shadow-xl" id="navbar">
         <div class="navbar-start">
-            <a class="btn btn-ghost normal-case text-xl hover:fill-white" href="/calendar2"> 
+            <a class="btn btn-ghost normal-case text-xl hover:fill-white" href="/pages/calendar2"> 
                 <img class="pl-1" src={PDLogo} alt="ProdoCal" width="50"/>
             </a>
         </div>
@@ -30,10 +30,10 @@
                 </label>
 
                 <ul tabindex="-1" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-white rounded-box w-52">
-                    <li><a href="/settings">Profile & Settings</a></li>
+                    <li><a href="/pages/settings">Profile & Settings</a></li>
                     <li><a href="/">Logout</a></li>
-                    <li><a href="/create">TEMP: create</a></li>
-                    <li><a href="/create_org">TEMP: create_org</a></li>
+                    <li><a href="/pages/create">TEMP: create</a></li>
+                    <li><a href="/pages/create_org">TEMP: create_org</a></li>
                 </ul>
             </div>
         </div>

@@ -1,0 +1,3 @@
+[submodule "APIs"]
+	path = APIs
+	url = https://github.com/Prodocal/Prodocal-Apps.git

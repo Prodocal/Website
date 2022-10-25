@@ -98,7 +98,7 @@
     #month {
     padding: 70px 25px;
     width: 100%;
-    background-image: url('../background/pink_image.png');
+    /* background-image: url('../background/pink_image.png'); */
     background-size: cover;
     text-align: center;
     }
@@ -110,7 +110,7 @@
     }
 
     #month ul li {
-    color: white;
+    color: black;
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;

@@ -8,7 +8,7 @@
 <main>
     <div class="navbar rounded-2xl bg-gradient-to-r from-[#FAE1A7] to-[#FFAB9F] w-full shadow-xl" id="navbar">
         <div class="navbar-start">
-            <a class="btn btn-ghost normal-case text-xl hover:fill-white" href="/calendar"> 
+            <a class="btn btn-ghost normal-case text-xl hover:fill-white" href="/calendar2"> 
                 <img class="pl-1" src={PDLogo} alt="ProdoCal" width="50"/>
             </a>
         </div>

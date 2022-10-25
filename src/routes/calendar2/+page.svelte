@@ -4,6 +4,12 @@
     
     const date = new Date(); // creates a Date object and represents the current date and time
 
+    const today = { //makes an object called today and initializes the variables that describe today's date
+        dayNum: date.getDate(),
+        month: date.getMonth(),
+        year: date.getFullYear()
+    }
+
     // initialize an array full of all months for later use
     // using the right and left arrows on the front page will move between months
     const listofMonths = [ "January", "February", "March", "April", "May", "June", "July",  
@@ -22,7 +28,10 @@
 
     $: lastMonthDays = new Date(year, monthIndex, 0).getDate();
 
-    let currentDay = date.getDate(); // gets the current day
+    //let currentDay = date.getDate(); // gets the current day
+
+    $: cellQuantity = firstday <= 4 ? 35 : 42; // if first day is or after thursday, then we need 42 cells since the days carry over.
+    // if not, then we only need 35 to reduce extra row space
 
     const goPrevMonth = () => {
         if (monthIndex <= 0){
@@ -44,7 +53,7 @@
 
   
             
-    $: console.log(`${monthIndex} --- First Day Index: ${firstday}-- Number of Days: ${numdays} --- ${month} ${currentDay}`)
+    $: console.log(`${monthIndex} --- First Day Index: ${firstday}-- Number of Days: ${numdays} --- ${month} ${today.dayNum}`)
 
 </script>
 
@@ -69,13 +78,13 @@
     </ul>
 
     <ul id="days">
-        {#each Array(42) as _, i}
+        {#each Array(cellQuantity) as _, i}
             {#if i < firstday}
                 <li style="color:gray;"> {(lastMonthDays - firstday+1) + i} </li>
             {:else if i >= numdays + firstday}
                 <li style="color:gray;"> {i - (numdays + firstday-1)} </li>
             {:else}
-                <li class:active={i === currentDay+(firstday-1)}> {i - firstday+1}  </li> 
+                <li class:active={i === today.dayNum +(firstday-1) && today.month === monthIndex && today.year === year}> {i - firstday+1}  </li> 
             {/if}
         {/each}
     </ul>

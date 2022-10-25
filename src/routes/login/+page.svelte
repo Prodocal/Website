@@ -1,38 +1,47 @@
 <html data-theme="dark"></html>
 
-<div id="pink_background">
-    <div id="divBox">
-    
-        <div class="card w-96 glass text-primary-content" id= "Alexyu">
-        <div class="card-body">
-        
-        <h2 class="card-title" style='color: black;font-size: 35px;'> Welcome</h2>
-        
-        <h2 class="card-title" style='color: black;font-size: 35px;'>Back </h2>
-        <br>
+<script>
 
-        <label class="label">
-            <span class="label-text" style='color: black;'>Username</span>
-        </label>
-        <input type="text" placeholder="Type your username" class="input input-bordered w-full max-w-xs" />
-        <label class="label"> </label>
-    
-        <label class="label">
-            <span class="label-text" style='color: black;'>Password</span>
-        </label>
-        <input type="password" placeholder="Type your password" class="input input-bordered w-full max-w-xs" />
-        <label class="label"> 
-            <span class="label-text-alt"> <a class="link link-hover" href="/registration">Create account</a> </span>
-            <span class="label-text-alt"> <a class="link link-hover">Forgot password?</a></span>
-        </label>
+</script>
+
+<main>
+    <div id="pink_background">
+        <div id="divBox">
         
-        <br>
-        <button class="btn" style="background-color:neutral;"> <a href="/calendar">Login</a> </button>
-        
-        </div>
+            <div class="card w-96 glass text-primary-content" id= "transparency">
+            <div class="card-body">
+            
+            <h2 class="card-title" style='color: black;font-size: 35px;'> Welcome</h2>
+            
+            <h2 class="card-title" style='color: black;font-size: 35px;'>Back </h2>
+            <br>
+            <br>
+
+            <div class="form-control">
+                <label class="input-group input-group-vertical">
+                <span>Username</span>
+                <input type="text" placeholder="Enter your Username" class="input input-bordered" />
+                </label>
+            </div>
+            
+            <br>
+
+            <div class="form-control">
+                <label class="input-group input-group-vertical">
+                <span>Password</span>
+                <input type="passw" placeholder="Enter your password" class="input input-bordered" />
+                </label>
+            </div>
+
+            <br>
+            <button class="btn" style="background-color:neutral;"> <a href="/calendar2">Login</a> </button>
+            <button class="btn" style="background-color:neutral;"> <a href="/registration">Create an Account</a> </button>
+            
+            </div>
+            </div>
         </div>
     </div>
-</div>
+</main>
 
 <style>
     #divBox{
@@ -47,7 +56,7 @@
         background-size: cover;
     }
 
-    #Alexyu{
+    #transparency{
         opacity: 0.83;
     }
 

@@ -1,6 +1,6 @@
-
 <script>
     // <script> is used to embed executable code or data. Usually refers to Javascript code. 
+    // based off of https://www.w3schools.com/howto/howto_css_calendar.asp
     
     const date = new Date(); // creates a Date object and represents the current date and time
 
@@ -51,14 +51,12 @@
         return monthIndex++;
     }
 
-  
-            
     $: console.log(`${monthIndex} --- First Day Index: ${firstday}-- Number of Days: ${numdays} --- ${month} ${today.dayNum}`)
 
 </script>
 
 <main>
-    
+
     <div id="month">
     <ul>
         <li class="prev" on:click={goPrevMonth}>&#10094;</li>

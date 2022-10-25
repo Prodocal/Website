@@ -1,3 +1,4 @@
+
 <script>
     import PDLogo from "./img/logo.svg";
     import KBIcon from "./img/kbicon.jpg";
@@ -35,8 +36,6 @@
                     <li><a href="/create_org">TEMP: create_org</a></li>
                 </ul>
             </div>
-
         </div>
-        
     </div>
 </main>

@@ -1,5 +1,5 @@
 <script>
-    import KBIcon from "../components/img/kbicon.jpg";
+    import KBIcon from "../../components/img/kbicon.jpg";
 </script>
 
 <main>
@@ -20,7 +20,6 @@
                     </div>
         
                 </div>
-
 
             </div>
         </div>

@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="card-actions">
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary"><a href="/pages/calendar2">Login</a></button>
                     </div>
                 </form>
             </div>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="card-actions justify-center">
                         <p></p>
-                        <button type="submit" class="btn btn-primary">Signup</button>
+                        <button type="submit" class="btn btn-primary"><a href="/pages/calendar2">Signup</a></button>
                     </div>
                 </form>
             </div>

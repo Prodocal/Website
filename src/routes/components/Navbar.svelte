@@ -19,7 +19,7 @@
 
         <div class="navbar-end">
             <nav>
-                <a class="btn btn-ghost normal-case text-xl" href="/findfeature"> 
+                <a class="btn btn-ghost normal-case text-xl" href="/pages/findfeature"> 
                     <img class="pl-1" src={PeopleIcon} alt="Social" width="40"/>
                 </a>
             </nav>

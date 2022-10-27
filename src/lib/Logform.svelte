@@ -1,4 +1,5 @@
 <script>
+    import {goto} from '$app/navigation';
     let tabs = [
         "Login",
         "Signup",
@@ -13,6 +14,8 @@
                 "password": password,
             },
         };
+
+        goto(`/calendar`);
         console.log(obj);
     }
 
@@ -30,7 +33,6 @@
 
         console.log(obj);
     }
-
 </script>
 
 <main>
@@ -38,7 +40,7 @@
         <div class="card-body  items-center text-center">
             <div class="tabs tabs-boxed">
                 {#each tabs as tab, index}
-                    <button class="tab" class:tab-active={activeTab == index} on:click={()=>activeTab = index}>{tab}</button>
+                    <button class="tab tab-lifted" class:tab-active={activeTab == index} on:click={()=>activeTab = index}>{tab}</button>
                 {/each}
             </div>
 

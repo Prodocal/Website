@@ -1,16 +1,15 @@
 <script>
-    import Logform from "./components/Logform.svelte";
+    import Logform from "$lib/Logform.svelte";
 </script>
 
 <main>
-    <div id="padding"></div>
     <Logform/>
 </main>
 
 
 <style>
     main {
-        width: 100vw;
+        padding: 20px;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -5,6 +5,7 @@
 <main>
   <div id="padding"></div>
   <Logform/>
+  <Create/>
 </main>
 
 

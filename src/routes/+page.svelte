@@ -1,12 +1,13 @@
 <script>
     import Logform from "./components/Logform.svelte";
+    import Create from "./components/Create.svelte";
 </script>
 
 <main>
     <div id="padding"></div>
     <Logform/>
+    <Create/>
 </main>
-
 
 <style>
     main {

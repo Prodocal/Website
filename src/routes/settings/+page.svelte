@@ -1,5 +1,5 @@
 <script>
-    import KBIcon from "../components/img/kbicon.jpg";
+    import KBIcon from "$lib/assets/kbicon.jpg";
 </script>
 
 <main>

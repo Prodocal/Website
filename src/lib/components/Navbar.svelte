@@ -1,8 +1,8 @@
 
 <script>
-    import PDLogo from "./img/logo.svg";
-    import KBIcon from "./img/kbicon.jpg";
-    import PeopleIcon from "./img/peopleicon.svg";
+    import PDLogo from "$lib/assets/logo.svg";
+    import KBIcon from "$lib/assets/kbicon.jpg";
+    import PeopleIcon from "$lib/assets/peopleicon.svg";
 </script>
 
 <main>

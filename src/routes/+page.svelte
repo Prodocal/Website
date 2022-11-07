@@ -4,6 +4,7 @@
 
 <main>
     <Logform/>
+    <Create/>
 </main>
 
 

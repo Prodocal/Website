@@ -1,10 +1,9 @@
 <script>
-    import Logform from "$lib/Logform.svelte";
+    import Logform from "$lib/components/Logform.svelte";
 </script>
 
 <main>
     <Logform/>
-    <Create/>
 </main>
 
 

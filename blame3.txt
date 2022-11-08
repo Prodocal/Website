@@ -1,0 +1,114 @@
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400   1) <script>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600   2) 
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600   3)     import UsernameIcon from "./img/username.svg";
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600   4)     import PasswordIcon from "./img/password.svg";
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600   5)     import EmailIcon from "./img/email.svg";
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600   6)     import PhoneIcon from "./img/phonenumber.svg";
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600   7) 
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400   8)     let tabs = [
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600   9)         "LOGIN",
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  10)         "SIGNUP",
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400  11)     ];
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  12)     let activeTab = 0;
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  13)     var username, password, email, phone, firstname, lastname;
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  14) 
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  15)     function validateLogin(username, password){
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  16)         let obj ={
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  17)             "users":{
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  18)                 "username": username,
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  19)                 "password": password,
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  20)             },
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  21)         };
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  22)         console.log(obj);
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  23)     }
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  24) 
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  25)     function newUser(username, password, email, phone, firstname, lastname){
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  26)         let obj ={
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  27)             "users":{
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  28)                 "username": username,
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  29)                 "password": password,
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  30)                 "email": email,
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  31)                 "phone": phone,
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  32)                 "First Name": firstname,
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  33)                 "Last Name": lastname,
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  34)             },
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  35)         };
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  36) 
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  37)         console.log(obj);
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  38)     }
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  39) 
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400  40) </script>
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400  41) 
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  42) <main>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  43)     <div class="card w-96">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  44)         <div class="card-body items-center text-center">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  45)             <div class="bg-white rounded-full px-5 py-.5 text-center mt-2 shadow-xl">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  46)                 <div class="tabs tabs-bordered">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  47)                     {#each tabs as tab, index}
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  48)                         <button class="tab text-[#FFAB9F] text-opacity-50 text-m" class:tab-active={activeTab == index} on:click={()=>activeTab = index}>{tab}</button>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  49)                     {/each}
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  50)                 </div>
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  51)             </div>
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400  52) 
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  53)             <!-- login -->
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  54)             <div class="card-body" class:hidden={activeTab != 0}>
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  55)                 <form class="form-control w-full max-w-xs" on:submit|preventDefault={validateLogin(username, password)}>
+e2e2d704 (kmlbyc      2022-11-07 20:58:28 -0600  56)                     <div class="card-actions justify-start">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  57)                         <input type="text" placeholder="username" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={username}/>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  58)                         <img src={UsernameIcon} class="absolute w-8 ml-2 mt-2" alt="?">
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  59)                     </div>
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400  60) 
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  61)                     <div class="card-actions justify-start">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  62)                         <input type="text" placeholder="password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={password}/>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  63)                         <img src={PasswordIcon} class="absolute w-8 ml-2 mt-2" alt="?">
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  64)                     </div>
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400  65) 
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  66)                     <div class="card-actions justify-center">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  67)                         <button type="submit" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  68)                             <a href="/pages/calendar2" class="font-extrabold">LOGIN</a>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  69)                         </button>
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  70)                     </div>
+6d115a46 (ApramodkPFJ 2022-10-24 18:46:18 -0400  71)                 </form>
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400  72)             </div>
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400  73) 
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  74)             <!-- signup -->
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  75)             <div class="card-body" class:hidden={activeTab != 1}>
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400  76)                 <form class="form-control w-full max-w-xs" on:submit|preventDefault={newUser(username, password, email, phone, firstname, lastname)}>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  77)                     <div class="card-actions justify-start mb-2">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  78)                         <input type="text" placeholder="first name" class="input w-full max-w-xs flex-1 bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl" bind:value={firstname} />
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  79)                         <input type="text" placeholder="last name" class="input w-full max-w-xs flex-1 bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl" bind:value={lastname}/>
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  80)                     </div>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  81)                     <div class="card-actions justify-start mb-2">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  82)                         <input type="text" placeholder="email" class="input w-full max-w-xs bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl pl-11" bind:value={email}/>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  83)                         <img src={EmailIcon} class="absolute w-8 ml-2 mt-2" alt="?">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  84)                     </div>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  85)                     <div class="card-actions justify-start mb-4">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  86)                         <input type="text" placeholder="phone number" class="input w-full max-w-xs bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl pl-11" bind:value={phone}/>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  87)                         <img src={PhoneIcon} class="absolute w-8 ml-2 mt-2" alt="?">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  88)                     </div>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  89) 
+e2e2d704 (kmlbyc      2022-11-07 20:58:28 -0600  90)                     <div class="card-actions justify-start">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  91)                         <input type="text" placeholder="username" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={username}/>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  92)                         <img src={UsernameIcon} class="absolute w-8 ml-2 mt-2" alt="?">
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  93)                     </div>
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400  94) 
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  95)                     <div class="card-actions justify-start">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  96)                         <input type="text" placeholder="password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={password}/>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  97)                         <img src={PasswordIcon} class="absolute w-8 ml-2 mt-2" alt="?">
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400  98)                     </div>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600  99) 
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400 100)                     <div class="card-actions justify-start">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600 101)                         <input type="text" placeholder="re-enter password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={password}/>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600 102)                         <img src={PasswordIcon} class="absolute w-8 ml-2 mt-2" alt="?">
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400 103)                     </div>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600 104) 
+e2e2d704 (kmlbyc      2022-11-07 20:58:28 -0600 105)                     <div class="card-actions justify-start">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600 106)                         <button type="submit" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl">
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600 107)                             <a href="/pages/calendar2" class="font-extrabold">SIGNUP</a>
+30570b08 (kmlbyc      2022-11-07 20:52:42 -0600 108)                         </button>
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400 109)                     </div>
+84736415 (ApramodkPFJ 2022-10-24 20:28:26 -0400 110)                 </form>
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400 111)             </div>
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400 112)         </div>
+417a7203 (ApramodkPFJ 2022-10-24 17:48:14 -0400 113)     </div>
+943cbcbf (ApramodkPFJ 2022-10-24 18:04:37 -0400 114) </main>

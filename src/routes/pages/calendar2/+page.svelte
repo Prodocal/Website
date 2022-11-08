@@ -59,13 +59,15 @@
 
     <div id="month">
     <ul>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
         <li class="prev" on:click={goPrevMonth}>&#10094;</li>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
         <li class="next" on:click={goNextMonth}>&#10095;</li>
         <li> {month} <br><span style="font-size:18px"> {year} </span></li>
     </ul>
     </div>
 
-    <ul id="weekdays">
+    <ul id="weekdays" class="rounded-full text-[#31302e] bg-gradient-to-br from-[#FAE1A7] to-[#FFAB9F]">
         <li>Su</li>
         <li>Mo</li>
         <li>Tu</li>

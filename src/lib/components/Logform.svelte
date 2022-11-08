@@ -67,7 +67,7 @@
 
                     <div class="card-actions justify-center">
                         <button type="submit" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl">
-                            <a href="/pages/calendar2" class="font-extrabold">LOGIN</a>
+                            <a href="/calendar2" class="font-extrabold">LOGIN</a>
                         </button>
                     </div>
                 </form>
@@ -106,7 +106,7 @@
 
                     <div class="card-actions justify-center">
                         <button type="submit" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl">
-                            <a href="/pages/calendar2" class="font-extrabold">SIGNUP</a>
+                            <a href="/calendar2" class="font-extrabold">SIGNUP</a>
                         </button>
                     </div>
                 </form>

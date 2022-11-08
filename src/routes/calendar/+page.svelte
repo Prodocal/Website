@@ -1,8 +1,8 @@
 <script>
-    import Calendar from '../calendar2/+page.svelte'
+    import Calendar from "../calendar2/+page.svelte";
 </script>
 
-<main>
+<main> 
     <Calendar/>
 </main>
 

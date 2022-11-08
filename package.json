@@ -26,6 +26,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"daisyui": "^2.31.0"
+		"daisyui": "^2.31.0",
+		"tailwindcss-filters": "^3.0.0"
 	}
 }

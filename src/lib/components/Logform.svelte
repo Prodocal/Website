@@ -1,7 +1,7 @@
 <script>
     import {goto} from '$app/navigation';
     import UsernameIcon from "$lib/assets/username.svg";
-    import PasswordIcon from ".$lib/assets/password.svg";
+    import PasswordIcon from "$lib/assets/password.svg";
     import EmailIcon from "$lib/assets/email.svg";
     import PhoneIcon from "$lib/assets/phonenumber.svg";
 

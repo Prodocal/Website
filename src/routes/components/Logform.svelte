@@ -53,7 +53,7 @@
             <!-- login -->
             <div class="card-body" class:hidden={activeTab != 0}>
                 <form class="form-control w-full max-w-xs" on:submit|preventDefault={validateLogin(username, password)}>
-                    <div class="card-actions justify-start">  
+                    <div class="card-actions justify-start">
                         <input type="text" placeholder="username" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={username}/>
                         <img src={UsernameIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
@@ -87,7 +87,7 @@
                         <img src={PhoneIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 
-                    <div class="card-actions justify-start">  
+                    <div class="card-actions justify-start">
                         <input type="text" placeholder="username" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={username}/>
                         <img src={UsernameIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
@@ -102,7 +102,7 @@
                         <img src={PasswordIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 
-                    <div class="card-actions justify-center">
+                    <div class="card-actions justify-start">
                         <button type="submit" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl">
                             <a href="/pages/calendar2" class="font-extrabold">SIGNUP</a>
                         </button>

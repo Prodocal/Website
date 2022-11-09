@@ -25,7 +25,7 @@
 <main>
     <div class="navbar pt-3 pb-3 rounded-full bg-gradient-to-br from-[#FAE1A7] to-[#FFAB9F] w-full shadow-xl" id="navbar">
         <div class="navbar-start">
-            <a class="w-12 h-12 btn btn-ghost btn-square ml-5" href="/pages/calendar2"> 
+            <a class="w-12 h-12 btn btn-ghost btn-square ml-5" href="/calendar2"> 
                 <img src={PDLogo} alt="ProdoCal"/>
             </a>
         </div>
@@ -48,7 +48,7 @@
                 </label>
 
                 <ul tabindex="-1" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-white rounded-box w-52">
-                    <li><a href="/pages/settings">Profile & Settings</a></li>
+                    <li><a href="/settings">Profile & Settings</a></li>
                     <li><a href="/">Logout</a></li>
                 </ul>
             </div>

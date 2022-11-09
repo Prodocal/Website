@@ -1,8 +1,12 @@
 <script>
     import "../app.css";
-    // console.log(section); 
+    import Navbar from "$lib/components/Navbar.svelte";
+    import { page } from '$app/stores';
 </script>
 
+{#if $page.url.pathname !== '/'}
+    <Navbar/>
+{/if}
 
 <slot/>
 

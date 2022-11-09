@@ -39,9 +39,7 @@
                     <input type="date" placeholder="mm/dd/yyyy" class="input input-bordered" bind:value={deadline}/>
                     <span class="label-text-alt"><br />Deadline</span>
                 </div>
-           
             </div>
-            
             <div class="modal-action">
                 <label type="submit" for="my-modal" class="btn">done</label>
             </div>

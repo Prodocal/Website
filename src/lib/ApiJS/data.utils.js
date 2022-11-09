@@ -14,25 +14,25 @@ export const event = {
     organization: undefined,
     class: undefined,
     type: undefined,
-}
+};
 
 export function validateLogin(user){
     // let obj = Object.create(user);
-    console.log(obj);
-}
+    console.log(user);
+};
 
 export function newUser(user){
     // let obj = Object.create(user);
-    console.log(obj);
-}
+    console.log(user);
+};
 
 export function validateEvent(event){
-    let obj = Object.create(event);
-    console.log(obj);
-}
+    // let obj = Object.create(event);
+    console.log(event);
+};
 
 export function newEvent(event){
-    let obj = Object.create(event);
-    console.log(obj);
-}
+    // let obj = Object.create(event);
+    console.log(event);
+};
 

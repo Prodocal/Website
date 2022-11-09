@@ -1,9 +1,0 @@
-b30fc412 (ApramodkPFJ 2022-11-08 18:41:09 -0500 1) export const days = [
-b30fc412 (ApramodkPFJ 2022-11-08 18:41:09 -0500 2)     `Monday`,
-b30fc412 (ApramodkPFJ 2022-11-08 18:41:09 -0500 3)     `Tuesday`,
-b30fc412 (ApramodkPFJ 2022-11-08 18:41:09 -0500 4)     `Wednesday`,
-b30fc412 (ApramodkPFJ 2022-11-08 18:41:09 -0500 5)     `Thursday`,
-b30fc412 (ApramodkPFJ 2022-11-08 18:41:09 -0500 6)     `Friday`,
-b30fc412 (ApramodkPFJ 2022-11-08 18:41:09 -0500 7)     `Saturday`,
-b30fc412 (ApramodkPFJ 2022-11-08 18:41:09 -0500 8)     `Sunday`,
-b30fc412 (ApramodkPFJ 2022-11-08 18:41:09 -0500 9) ];

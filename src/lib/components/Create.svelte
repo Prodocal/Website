@@ -1,5 +1,4 @@
 <script>
-
     var event_title, organization, class_name, deadline;
 
     function newEvent(event_title, organization, class_name, deadline){
@@ -18,7 +17,7 @@
 
 <main>
     <label for="my-modal" class="btn btn-outline btn-info modal-button">open modal</label>
-
+    
     <!-- Put this part before </body> tag -->
     <input type="checkbox" id="my-modal" class="modal-toggle" />
     <div class="modal">

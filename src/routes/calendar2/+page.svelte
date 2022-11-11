@@ -72,13 +72,13 @@
     </div>
 
     <ul id="weekdays">
-        <li>Su</li>
-        <li>Mo</li>
-        <li>Tu</li>
-        <li>We</li>
-        <li>Th</li>
-        <li>Fr</li>
-        <li>Sa</li>
+        <li>Sun</li>
+        <li>Mon</li>
+        <li>Tue</li>
+        <li>Wed</li>
+        <li>Thu</li>
+        <li>Fri</li>
+        <li>Sat</li>
     </ul>
 
     <ul id="days">
@@ -100,87 +100,88 @@
     ul {list-style-type: none;}
     main {font-family: sans-serif, 'Trebuchet MS';}
 
-    /* Month header */
-    #month {
-    padding: 25px 25px;
-    width: 100%;
-    /* background-image: url('../background/pink_image.png'); */
-    background-size: cover;
-    text-align: center;
-    }
-
-    #create_event {
+    #create_event{
         padding: 10px 0px;
         width: 100%;
         text-align: center;
     }
 
-    /* Month list */
+    /* Month header */
+    #month{
+        padding: 25px 25px;
+        width: 100%;
+        text-align: center;
+        background-size: cover;
+    }
+
+    /* Month header style*/
+    #month ul li{
+        font-size: 30px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: rgb(60, 64, 67);
+    }
+
+    /* Months list */
     #month ul {
-    margin: 0;
-    padding: 0;
+        margin: 0;
+        padding: 0;
     }
 
-    #month ul li {
-    color: black;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    /* Next arrow in month header */
+    #month .next{
+        padding-top: 10px;
+        cursor: pointer;
+        float: right;
     }
 
-    /* Previous button inside month header */
-    #month .prev {
-    float: left;
-    padding-top: 10px;
-    cursor: pointer;
+    #month .prev{
+        padding-top: 10px;
+        cursor: pointer;
+        float: left;
     }
 
-    /* Next button */
-    #month .next {
-    float: right;
-    padding-top: 10px;
-    cursor: pointer;
-    
+    /*(Mon-Sun)*/
+    #weekdays{
+        margin: 0;
+        padding: 10px 0;
+        background-color:rgb(60, 64, 67);
     }
 
-    /* Weekdays (Mon-Sun) */
-    #weekdays {
-    margin: 0;
-    padding: 10px 0;
-    background-color:rgb(75, 74, 74);
+    /* Weekday style*/
+    #weekdays li{
+        display: inline-block;
+        width: 13.2%;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        text-align: center;
     }
 
-    #weekdays li {
-    display: inline-block;
-    width: 13.6%;
-    color: #ffffff;
-    text-align: center;
+    /* Day block (1-31)*/
+    #days{
+        padding: 10px;
+        background: rgb(255, 255, 255);
+        margin: 0;
     }
 
-    /* Days (1-31) */
-    #days {
-    padding: 10px 0;
-    background: rgb(255, 255, 255);
-    margin: 0;
+    /* Day style (1-31) */
+    #days li{
+        list-style-type: none;
+        display: inline-block;
+        border: 2px solid rgb(218, 220, 224);
+        padding: 40px;
+        width: 13.6%;
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 13px;
+        color: rgb(60, 64, 67);
     }
 
-    #days li {
-    list-style-type: none;
-    display: inline-block;
-    border: 1px solid black;
-    padding: 40px;
-    width: 13.6%;
-    text-align: center;
-    margin-bottom: 5px;
-    font-size:13px;
-    color: rgb(0, 0, 0);
-    }
-
-    /* Highlight the "current" day */
-    .active {
-    padding: 5px;
-    background: #fda3956e;
-    color: rgb(0, 0, 0) !important
+    /*Highlighs "current" day */
+    .active{
+        padding: 5px;
+        color: rgb(255, 255, 255) !important;
+        background: #FFAB9F;
     }
 
 </style>

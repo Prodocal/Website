@@ -1,4 +1,9 @@
 <script>
+    import EventTitle from "$lib/assets/event_title.svg";
+    import OrgName from "$lib/assets/organization_name.png";
+    import ClassName from "$lib/assets/class_name.png";
+    import TypeName from "$lib/assets/type_icon.svg";
+    import Date from "$lib/assets/calendar.png";
     import {event, validateEvent, newEvent} from "$lib/ApiJS/data.utils.js";
     //var event_title, organization, class_name, deadline;
 
@@ -35,29 +40,39 @@
     <input type="checkbox" id="my-modal" class="modal-toggle" />
     <div class="modal">
         
-        <div class="modal-box card w-96">
+        <div class="card grid place-items-center shadow-xl px-3/6 bg-gradient-to-bl from-[#FAE1A7] to-[#FFAB9F]">
             
             <div class="card-body items-center text-center"> 
                 
-                <form class="form-control" on:submit|preventDefault={newEvent(obj)}>
-                    <p>Event</p>
-                    <button type="submit" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl">
-                        help by gods grace
-                    </button>   
-                    <div class="card-actions justify-start">
-                        <input type="text" placeholder="Event Title" class="input input-bordered" bind:value={obj.title}/>
-
-                        <input type="text" placeholder="Organization Name" class="input input-bordered" bind:value={obj.organization}/>
-                    
-                        <input type="text" placeholder="Class Name" class="input input-bordered" bind:value={obj.class}/>
-
-                        <input type="text" placeholder="Type" class="input input-bordered" bind:value={obj.type}/>
-                    
-                        <input type="date" placeholder="mm/dd/yyyy" class="input input-bordered" bind:value={obj.deadline}/>
-                        <span class="label-text-alt"><br />Deadline</span>
+                <form class="form-control w-full max-w-xs" on:submit|preventDefault={newEvent(obj)}> 
+                
+                    <div class="card-actions justify-start mb-4">
+                        <input type="text" placeholder="Event Title" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.title}/>
+                        <img src={EventTitle} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
+                    
+                    <div class="card-actions justify-start mb-4">
+                        <input type="text" placeholder="Organization Name" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.organization}/>
+                        <img src={OrgName} class="absolute w-8 ml-2 mt-2" alt="?">
+                    </div>
+
+                    <div class="card-actions justify-start mb-4">
+                        <input type="text" placeholder="Class Name" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.class}/>
+                        <img src={ClassName} class="absolute w-8 ml-2 mt-2" alt="?">
+                    </div>
+
+                    <div class="card-actions justify-start mb-4">
+                        <input type="text" placeholder="Type" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.type}/>
+                        <img src={TypeName} class="absolute w-8 ml-2 mt-2" alt="?">
+                    </div>
+
+                    <div class="card-actions justify-start mb-4">
+                        <input type="text" placeholder="date" aria-label="Start Date" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.deadline}/>
+                        <img src={Date} class="absolute w-8 ml-2 mt-2" alt="?">
+                    </div>
+
                     <div class="modal-actions card-actions">
-                    <button type="submit" for="my-modal" on:click={form_submit()}>done</button>
+                        <button type="submit" for="my-modal" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl" on:click={form_submit()}>done</button>
                     </div>
                 </form>
             </div>

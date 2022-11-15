@@ -13,7 +13,7 @@
     } else if (time > 11) {
         search_msg = 'Good afternoon...';
     } else if (time > 5) {
-        search_msg = 'Good moring...'
+        search_msg = 'Good morning...'
     } else if (time >= 0) {
         search_msg = 'Early bird or night owl?';
     } else {

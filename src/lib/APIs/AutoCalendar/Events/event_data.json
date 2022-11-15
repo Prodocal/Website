@@ -1,0 +1,25 @@
+{
+  "event_data": [
+    {
+      "name": "Random Chimp Event",      
+      "type": "Apocolypse",      
+      "start_date": "today",      
+      "end_date": "tomorrow",      
+      "completed": 0   
+    },
+    {
+      "name": "Valorant Marathon",      
+      "type": "Self-Harm",      
+      "start_date": "yesteryesterday",      
+      "end_date": "yesterday",      
+      "completed": 1
+    },
+    {
+      "name": "Area 51 Invasion",      
+      "type": "Revolution",      
+      "start_date": "tomorrow",      
+      "end_date": "overmorrow",      
+      "completed": 0   
+    }
+  ]
+}

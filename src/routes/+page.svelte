@@ -1,6 +1,7 @@
 <script>
     import Logform from "$lib/components/Logform.svelte";
     import Logo from "$lib/assets/logo.svg";
+    import Create from "$lib/components/Create.svelte";
 </script>
 
 <main>

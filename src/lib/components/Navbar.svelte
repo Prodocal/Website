@@ -23,15 +23,15 @@
 </script>
 
 <main>
-    <div class="navbar pt-3 pb-3 rounded-full bg-gradient-to-br from-[#FAE1A7] to-[#FFAB9F] w-full shadow-xl" id="navbar">
+    <div class="navbar pt-3 pb-3 rounded-full backdrop-blur bg-white/50 w-full shadow-xl" id="navbar">
         <div class="navbar-start">
-            <a class="w-12 h-12 btn btn-ghost btn-square ml-5" href="/calendar2"> 
+            <a class="w-12 h-12 btn btn-ghost btn-square ml-5" href="/calendar"> 
                 <img src={PDLogo} alt="ProdoCal"/>
             </a>
         </div>
         
         <div class="navbar-start">
-            <input type="search" id="default-search" class="block pt-4 pb-4 pr-22 pl-12 w-full text-[#FFAB9F] text-lg rounded-full shadow-xl placeholder-[#FFAB9F] placeholder:italic" placeholder="{search_msg}" required>
+            <input type="search" id="default-search" class="block pt-4 pb-4 pr-22 pl-12 w-full text-neutral text-lg rounded-full shadow-xl placeholder-neutral placeholder:italic" placeholder="{search_msg}" required>
             <img src={SearchIcon} class="absolute pl-2 w-11" alt="?">
         </div>
 
@@ -55,3 +55,9 @@
         </div>
     </div>
 </main>
+
+<style>
+    main{
+        padding: 10px;
+    }
+</style>

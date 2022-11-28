@@ -1,8 +1,6 @@
 <script>
     // <script> is used to embed executable code or data. Usually refers to Javascript code. 
     // based off of https://www.w3schools.com/howto/howto_css_calendar.asp
-    
-    import Create from "$lib/components/Create.svelte";
 
     const date = new Date(); // creates a Date object and represents the current date and time
 
@@ -54,21 +52,15 @@
     }
 
     $: console.log(`${monthIndex} --- First Day Index: ${firstday}-- Number of Days: ${numdays} --- ${month} ${today.dayNum}`)
-
 </script>
 
 <main>
-
     <div id="month">
     <ul>
         <li class="prev" on:click={goPrevMonth}>&#10094;</li>
         <li class="next" on:click={goNextMonth}>&#10095;</li>
         <li> {month} <br><span style="font-size:18px"> {year} </span></li>
     </ul>
-    </div>
-
-    <div id="create_event">
-        <Create/>
     </div>
 
     <ul id="weekdays">

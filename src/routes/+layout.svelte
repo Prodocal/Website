@@ -4,9 +4,24 @@
     import { page } from '$app/stores';
 </script>
 
-{#if $page.url.pathname !== '/'}
-    <Navbar/>
-{/if}
+<body data-theme="light" class="bg-gradient-to-br from-[#FAE1A7] to-[#FFAB9F]">
+    {#if $page.url.pathname !== '/'}
+        <Navbar/>
+    {/if}
 
-<slot/>
+    <slot></slot>
+</body>
+
+<style>
+    body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #1c1c1cc2;
+    font-weight: 800;
+    overflow: hidden;
+    }
+</style>
+
+
 

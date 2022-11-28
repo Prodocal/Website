@@ -1,33 +1,19 @@
 <script>
     import MonthView from "$lib/components/MonthView.svelte";
-    import Month from "$lib/components/Month.svelte";
+    import Month from "$lib/components/calendar/Month.svelte";
     import Create from "$lib/components/Create.svelte";
+
+
 </script>
 
 <main> 
-    <div class="card card-side max-h-[85vh] shadow-xl backdrop-blur bg-white/50">
-        <div class="card-body w-96 flex flex-col">
-            <div class="flex-1 flex flex-col">
-                <div class="btn">
-                    Month
-                </div>
-                <br/>
-                <div class="btn">
-                    Week
-                </div>
-                <br/>
-                <div class="btn">
-                    Day
-                </div>
-            </div>
+    <div class="card card-side h-[85vh] w-[95vw] shadow-xl backdrop-blur bg-white/50">
+        <div class="card-body w-10 flex flex-col">
             <div class="flex-1">
                 <Create/>
             </div>
         </div>
-        <div class="card-body">
-            <Month/>
-        </div>
-        
+        <Month/>        
     </div>
     
 </main>

@@ -19,7 +19,7 @@
     font-family: 'Inter', sans-serif;
     color: #1c1c1cc2;
     font-weight: 800;
-    overflow: hidden;
+    /* overflow: hidden; */
     }
 </style>
 

@@ -10,6 +10,8 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@event-calendar/core": "^0.14.0",
+		"@event-calendar/time-grid": "^0.14.0",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"autoprefixer": "^10.4.12",

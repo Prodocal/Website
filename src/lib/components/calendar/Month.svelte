@@ -64,17 +64,20 @@
             <li>Sat</li>
         </ul>
 
-        <ul id="days">
-            {#each Array(cellQuantity) as _, i}
-                {#if i < firstday}
-                    <li style="color:gray;"> {(lastMonthDays - firstday+1) + i} </li>
-                {:else if i >= numdays + firstday}
-                    <li style="color:gray;"> {i - (numdays + firstday-1)} </li>
-                {:else}
-                    <li class:active={i === today.dayNum +(firstday-1) && today.month === curMonth && today.year === year}> {i - firstday+1}  </li> 
-                {/if}
-            {/each}
-        </ul>
+        <div class="card-body h-[70vh] grid grid-cols-7 grid-rows-5 gap-2">
+            <!-- <ul id="days"> -->
+                {#each Array(cellQuantity) as _, i}
+                    {#if i < firstday}
+                        <div class="btn w-36 h-28">  {(lastMonthDays - firstday+1) + i}</div>
+                        <!-- <li style="color:gray;"> {(lastMonthDays - firstday+1) + i} </li> -->
+                    {:else if i >= numdays + firstday}
+                        <div class="btn w-36 h-28" style="color:gray;"> {i - (numdays + firstday-1)} </div>
+                    {:else}
+                        <div class="btn w-36 h-28" class:active={i === today.dayNum +(firstday-1) && today.month === curMonth && today.year === year}> {i - firstday+1}  </div> 
+                    {/if}
+                {/each}
+            <!-- </ul> -->
+        </div>
     </div>
 </main>
 

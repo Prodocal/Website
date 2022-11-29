@@ -1,0 +1,34 @@
+{
+  "user_data": [
+    {
+      "username": "user1",
+      "password": "password123",
+      "email": "email@email.com",
+      "phone": "###-###-####"
+    },
+    {
+      "username": "user2",
+      "password": "ballin",
+      "email": "email@email.com",
+      "phone": "###-###-####"
+    },
+    {
+      "username": "user3",
+      "password": "password123",
+      "email": "email@email.com",
+      "phone": "###-###-####"
+    },
+    {
+      "username": "akash",
+      "password": "bingus",
+      "email": "email@email.com",
+      "phone": "###-###-####"
+    },
+    {
+      "username": "mason",
+      "password": "muda da",
+      "email": "email@email.com",
+      "phone": "###-###-####"
+    }
+  ]
+}

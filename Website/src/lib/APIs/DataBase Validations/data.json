@@ -1,0 +1,56 @@
+{
+  "class_data": [
+    {
+      "id": "class1",
+      "org": "Monkey U",
+      "classname": "How2Monke",
+      "events": [
+        "ooga",
+        "booga"
+      ],
+      "members": [
+        "gorilla",
+        "orangutan"
+      ]
+    },
+    {
+      "id": "class2",
+      "org": "Monkey U",
+      "classname": "How2Banana",
+      "events": [
+        "peel a banana",
+        "eat a banana"
+      ],
+      "members": [
+        "chimp",
+        "bonobo"
+      ]
+    },
+    {
+      "org": "Monkey U",
+      "classname": "How 2 Monkey II",
+      "events": [
+        "ooga da booga",
+        "booga da ooga"
+      ],
+      "members": [
+        "chimpanzee",
+        "orangutan"
+      ]
+    }
+  ],
+  "event_data": [
+    {
+      "eventname": "Monke Exam", 
+      "org": "Monkey U",
+      "classname": "How2Monke",
+      "startdate": "04/20/2023",
+      "enddate": "06/09/2023",
+      "members": [
+        "gorilla",
+        "orangutan"
+      ],
+      "completed": "False"
+    }
+  ]
+}

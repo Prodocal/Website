@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="card-actions justify-start">
-                        <input type="text" placeholder="password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.password}/>
+                        <input type="password" placeholder="password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.password}/>
                         <img src={PasswordIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 
@@ -79,12 +79,12 @@
                     </div>
 
                     <div class="card-actions justify-start">
-                        <input type="text" placeholder="password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11"/>
+                        <input type="password" placeholder="password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11"/>
                         <img src={PasswordIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 
                     <div class="card-actions justify-start">
-                        <input type="text" placeholder="re-enter password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.password}/>
+                        <input type="password" placeholder="re-enter password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.password}/>
                         <img src={PasswordIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 

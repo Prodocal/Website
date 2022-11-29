@@ -6,13 +6,36 @@
 </script>
 
 <main> 
-    <div class="card card-side h-[85vh] w-[95vw] shadow-xl backdrop-blur bg-white/50">
-        <div class="card-body w-[40px] flex-none">
+    <div class="card card-side h-[85vh] shadow-xl backdrop-blur bg-white/50">
+        
+        <div id="create_button">
             <Create/>
         </div>
-        <div class="card-body w-10 flex-auto">
-            <Calendar/>    
-        </div>    
+        
+        <div id="calendar_format">
+            <Calendar/>   
+        </div> 
+    
     </div>
     
 </main>
+
+<style>
+
+    #create_button{
+        position: relative;
+        left: 60px;
+        top: 100px;
+    }
+
+    #calendar_format{
+        width: 70%;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        left: 150px;
+        top: 50px;
+        /*padding-bottom: calc(55%9/16);*/
+    }
+
+</style>

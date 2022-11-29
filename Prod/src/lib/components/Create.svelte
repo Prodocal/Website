@@ -4,7 +4,7 @@
     import ClassName from "$lib/assets/class_name.png";
     import TypeName from "$lib/assets/type_icon.svg";
     import Date from "$lib/assets/calendar.png";
-    import {event, validateEvent, newEvent} from "$lib/ApiJS/data.utils.js";
+    //import {event, validateEvent, newEvent} from "$lib/ApiJS/data.utils.js";
     //var event_title, organization, class_name, deadline;
 
     // function newEvent(event_title, organization, class_name, deadline){
@@ -18,7 +18,14 @@
     //     };
     //     console.log(obj);
     // }
-    const obj = Object.create(event);
+    let obj = {
+        title: undefined,
+        organization: undefined,
+        class: undefined,
+        type: undefined,
+        date: undefined
+    };
+    let onSubmit = function (info) {console.log("shouldn't happen");};
 
     function clearObj(obj) {
         for (const key in obj) {
@@ -27,7 +34,11 @@
     }
 
     function form_submit(){
-        validateEvent(obj);
+        
+        console.log(obj.title);
+
+        onSubmit(obj);
+
         close();
     }
 
@@ -47,7 +58,7 @@
             
             <div class="card-body items-center text-center"> 
                 
-                <form class="form-control w-full max-w-xs" on:submit|preventDefault={newEvent(obj)}> 
+                <form class="form-control w-full max-w-xs" on:submit|preventDefault={form_submit(obj)}> 
                 
                     <div class="card-actions justify-start mb-4">
                         <input type="text" placeholder="Event Title" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.title}/>
@@ -70,7 +81,7 @@
                     </div>
 
                     <div class="card-actions justify-start mb-4">
-                        <input type="date" placeholder="date" aria-label="Start Date" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.deadline}/>
+                        <input type="date" placeholder="date" aria-label="Start Date" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.date}/>
                         <img src={Date} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 

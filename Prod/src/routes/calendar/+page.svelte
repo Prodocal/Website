@@ -3,17 +3,30 @@
     import Month from "$lib/components/calendar/Month.svelte";
     import Create from "$lib/components/Create.svelte";
     import Calendar from "$lib/components/calendar.svelte";
+
+    // Handle communication between the create event modal and the calendar on this page
+
+    let cal_inst;
+    let create_event;
+
+    function AddEvent(obj)
+    {
+        cal_inst.pop_events(obj);
+    }
+
+    // why won't you work
+    //create_event.onSubmit = AddEvent;
 </script>
 
 <main> 
     <div class="card card-side h-[85vh] shadow-xl backdrop-blur bg-white/50">
         
         <div id="create_button">
-            <Create/>
+            <Create bind:this={create_event}/>
         </div>
         
         <div id="calendar_format">
-            <Calendar/>   
+            <Calendar bind:this={cal_inst}/>   
         </div> 
     
     </div>

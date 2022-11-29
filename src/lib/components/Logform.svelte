@@ -1,5 +1,6 @@
 <script>
     import {goto} from '$app/navigation';
+    import {validateForm} from "$lib/ApiJS/logform.js";
     import UsernameIcon from "$lib/assets/username.svg";
     import PasswordIcon from "$lib/assets/password.svg";
     import EmailIcon from "$lib/assets/email.svg";
@@ -14,6 +15,7 @@
     let activeTab = 0;
     
     const obj = Object.create(user);
+    let pass2 = "";
 
     function clearObj(obj){
         for (const key in obj) {
@@ -79,18 +81,18 @@
                     </div>
 
                     <div class="card-actions justify-start">
-                        <input type="text" placeholder="password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11"/>
+                        <input type="text" placeholder="password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.password}/>
                         <img src={PasswordIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 
                     <div class="card-actions justify-start">
-                        <input type="text" placeholder="re-enter password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.password}/>
+                        <input type="text" placeholder="re-enter password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={pass2}/>
                         <img src={PasswordIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 
                     <div class="card-actions justify-center">
                         <button type="submit" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl">
-                            <a href="/calendar" class="font-extrabold">Signup</a>
+                            <a href="/calendar" class="font-extrabold" on:click|preventDefault={validateForm(obj, pass2)}>Signup</a>
                         </button>
                     </div>
                 </form>

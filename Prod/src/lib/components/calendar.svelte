@@ -5,9 +5,12 @@
   // This is a reference to the component for creating events
   import CreateEvent from "$lib/components/Create.svelte";
 
+  let create_modal;
+
   function onDateClick(info)
   {
     console.log(info.dateStr);
+    create_modal = CreateEvent;
   }
 
   let cal_inst;
@@ -44,3 +47,4 @@
 <button on:click={pop_events}>add events</button>
 <button on:click={remove_test}>remove test event</button>
 <Calendar bind:this={cal_inst} {plugins} {options}/>
+<svelte:component this={create_modal} />

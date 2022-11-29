@@ -4,28 +4,24 @@
     import ClassName from "$lib/assets/class_name.png";
     import TypeName from "$lib/assets/type_icon.svg";
     import Date from "$lib/assets/calendar.png";
-    //import {event, validateEvent, newEvent} from "$lib/ApiJS/data.utils.js";
-    //var event_title, organization, class_name, deadline;
+    import { createEventDispatcher } from 'svelte';
 
-    // function newEvent(event_title, organization, class_name, deadline){
-    //     let obj ={
-    //         "events":{
-    //             "eventTitle": event_title,
-    //             "organization": organization,
-    //             "className": class_name,
-    //             "deadline": deadline,
-    //         },
-    //     };
-    //     console.log(obj);
-    // }
-    let obj = {
+    const dispatch = createEventDispatcher();
+
+    const obj = {
         title: undefined,
         organization: undefined,
         class: undefined,
         type: undefined,
         date: undefined
     };
-    let onSubmit = function (info) {console.log("shouldn't happen");};
+    
+    // const addEvent = new CustomEvent('create_event', {
+    //     detail: obj,
+    //     bubbles: true,
+    //     cancelable: false,
+    //     composed: false
+    // });
 
     function clearObj(obj) {
         for (const key in obj) {
@@ -35,12 +31,14 @@
 
     function form_submit(){
         
-        console.log(obj.title);
+        //console.log(obj.title);
 
-        onSubmit(obj);
+        dispatch('make', obj);
 
         close();
     }
+
+    
 
 </script>
 

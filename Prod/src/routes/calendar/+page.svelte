@@ -6,27 +6,26 @@
 
     // Handle communication between the create event modal and the calendar on this page
 
-    let cal_inst;
+    let cal;
     let create_event;
 
-    function AddEvent(obj)
+    function AddEvent(data)
     {
-        cal_inst.pop_events(obj);
+        console.log(data.detail.title);
+        if (cal != undefined) cal.pop_events(data.detail);
     }
-
-    // why won't you work
-    //create_event.onSubmit = AddEvent;
+    
 </script>
 
 <main> 
     <div class="card card-side h-[85vh] shadow-xl backdrop-blur bg-white/50">
         
         <div id="create_button">
-            <Create bind:this={create_event}/>
+            <Create bind:this={create_event} on:make={AddEvent} />
         </div>
         
         <div id="calendar_format">
-            <Calendar bind:this={cal_inst}/>   
+            <Calendar bind:this={cal}/>   
         </div> 
     
     </div>

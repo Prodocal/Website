@@ -37,7 +37,7 @@
   };
 
   // This function populates the calendar with the user's events on page load
-  function pop_events(obj)
+  export function pop_events(obj)
   {
     let event = {
       // id: 69,

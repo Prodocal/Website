@@ -1,6 +1,8 @@
 <script>
   import Calendar from '@event-calendar/core';
   import TimeGrid from '@event-calendar/day-grid';
+  // This is a reference to the component for creating events
+  import CreateEvent from "$lib/components/Create.svelte";
 
   let cal_inst;
   let tmp; // DEBUG
@@ -18,7 +20,8 @@
     let event = {
       id: 69,
       allDay: true,
-      title: "Test Event"
+      title: "Test Event",
+      backgroundColor: "#ffcb82"
     }
 
     tmp = cal_inst.addEvent(event);

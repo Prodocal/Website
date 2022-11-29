@@ -3,6 +3,7 @@
     // based off of https://www.w3schools.com/howto/howto_css_calendar.asp
     
     import Create from "$lib/components/Create.svelte";
+    import CalendarView from "$lib/components/CalendarView.svelte";
 
     const date = new Date(); // creates a Date object and represents the current date and time
 
@@ -71,6 +72,10 @@
         <Create/>
     </div>
 
+    <div id="change_view">
+        <CalendarView/>
+    </div>
+
     <ul id="weekdays">
         <li>Sun</li>
         <li>Mon</li>
@@ -104,6 +109,12 @@
         padding: 10px 0px;
         width: 100%;
         text-align: center;
+    }
+
+    #change_view{
+        padding: 10px 0px;
+        width: 100%;
+        text-align: right;
     }
 
     /* Month header */

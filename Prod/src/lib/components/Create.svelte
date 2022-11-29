@@ -4,21 +4,24 @@
     import ClassName from "$lib/assets/class_name.png";
     import TypeName from "$lib/assets/type_icon.svg";
     import Date from "$lib/assets/calendar.png";
-    import {event, validateEvent, newEvent} from "$lib/ApiJS/data.utils.js";
-    //var event_title, organization, class_name, deadline;
+    import { createEventDispatcher } from 'svelte';
 
-    // function newEvent(event_title, organization, class_name, deadline){
-    //     let obj ={
-    //         "events":{
-    //             "eventTitle": event_title,
-    //             "organization": organization,
-    //             "className": class_name,
-    //             "deadline": deadline,
-    //         },
-    //     };
-    //     console.log(obj);
-    // }
-    const obj = Object.create(event);
+    const dispatch = createEventDispatcher();
+
+    const obj = {
+        title: undefined,
+        organization: undefined,
+        class: undefined,
+        type: undefined,
+        date: undefined
+    };
+    
+    // const addEvent = new CustomEvent('create_event', {
+    //     detail: obj,
+    //     bubbles: true,
+    //     cancelable: false,
+    //     composed: false
+    // });
 
     function clearObj(obj) {
         for (const key in obj) {
@@ -27,9 +30,15 @@
     }
 
     function form_submit(){
-        validateEvent(obj);
+        
+        //console.log(obj.title);
+
+        dispatch('make', obj);
+
         close();
     }
+
+    
 
 </script>
 
@@ -47,7 +56,7 @@
             
             <div class="card-body items-center text-center"> 
                 
-                <form class="form-control w-full max-w-xs" on:submit|preventDefault={newEvent(obj)}> 
+                <form class="form-control w-full max-w-xs" on:submit|preventDefault={form_submit(obj)}> 
                 
                     <div class="card-actions justify-start mb-4">
                         <input type="text" placeholder="Event Title" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.title}/>
@@ -70,7 +79,7 @@
                     </div>
 
                     <div class="card-actions justify-start mb-4">
-                        <input type="date" placeholder="date" aria-label="Start Date" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.deadline}/>
+                        <input type="date" placeholder="date" aria-label="Start Date" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.date}/>
                         <img src={Date} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 

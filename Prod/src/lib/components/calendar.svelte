@@ -1,12 +1,13 @@
 <script>
   import Calendar from '@event-calendar/core';
   import TimeGrid from '@event-calendar/day-grid';
+  import Interaction from '@event-calendar/interaction'
   // This is a reference to the component for creating events
   import CreateEvent from "$lib/components/Create.svelte";
 
   let cal_inst;
   let tmp; // DEBUG
-  let plugins = [TimeGrid];
+  let plugins = [TimeGrid, Interaction];
   let options = {
       view: 'dayGridMonth',
       events: [

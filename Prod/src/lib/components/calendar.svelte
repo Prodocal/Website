@@ -5,6 +5,11 @@
   // This is a reference to the component for creating events
   import CreateEvent from "$lib/components/Create.svelte";
 
+  function onDateClick(info)
+  {
+    console.log(info.dateStr);
+  }
+
   let cal_inst;
   let tmp; // DEBUG
   let plugins = [TimeGrid, Interaction];
@@ -12,7 +17,8 @@
       view: 'dayGridMonth',
       events: [
           // your list of events
-      ]
+      ],
+      dateClick: onDateClick
   };
 
   // This function populates the calendar with the user's events on page load

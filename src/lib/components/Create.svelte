@@ -34,7 +34,10 @@
 </script>
 
 <main>
-    <label for="my-modal" class="btn btn-outline btn-info modal-button">Create Event</label>
+    <label for="my-modal" class="justify-start btn btn-md">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-white"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+        New Event
+    </label>
 
     <!-- Put this part before </body> tag -->
     <input type="checkbox" id="my-modal" class="modal-toggle" />
@@ -67,12 +70,14 @@
                     </div>
 
                     <div class="card-actions justify-start mb-4">
-                        <input type="text" placeholder="date" aria-label="Start Date" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.deadline}/>
+                        <input type="date" placeholder="date" aria-label="Start Date" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.deadline}/>
                         <img src={Date} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 
                     <div class="modal-actions card-actions">
-                        <button type="submit" for="my-modal" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl" on:click={form_submit()} >done</button>
+                        <button type="submit" for="my-modal" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl" on:click={form_submit()}>
+                              <label type="submit" for="my-modal" class="text-xl">ADD</label>
+                        </button>
                     </div>
                 </form>
             </div>

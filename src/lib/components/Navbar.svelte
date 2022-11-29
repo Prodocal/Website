@@ -36,10 +36,6 @@
         </div>
 
         <div class="navbar-end">
-            <a class="w-12 h-12 btn btn-ghost btn-square mr-5" href="/pages/findfeature">   
-                <img src={PeopleIcon} alt="Social"/>
-            </a>
-
             <div class="dropdown dropdown-end">
                 <label for="navbar" tabindex="-1" class="w-12 h-12 btn btn-ghost btn-circle avatar mr-5">
                     <div class="rounded-full">

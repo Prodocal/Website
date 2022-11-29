@@ -15,7 +15,7 @@
 <style>
     body{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     font-family: 'Inter', sans-serif;
     color: #1c1c1cc2;
     font-weight: 800;

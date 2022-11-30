@@ -5,6 +5,25 @@
   // This is a reference to the component for creating events
   import CreateEvent from "$lib/components/Create.svelte";
 
+  let selected_date;
+
+  // What it sounds like
+  function onDateClick(info)
+  {
+    selected_date = info.date;
+    console.log(selected_date);
+  }
+
+  // Gee what could this do I wonder
+  function onEventClick(info)
+  {
+    let event_ref = info.event;
+    console.log(event_ref.title);
+
+    // For testing it just removes the event
+    cal_inst.removeEventById(event_ref.id);
+  }
+
   let cal_inst;
   let tmp; // DEBUG
   let plugins = [TimeGrid, Interaction];
@@ -12,29 +31,27 @@
       view: 'dayGridMonth',
       events: [
           // your list of events
-      ]
+      ],
+      dateClick: onDateClick,
+      eventClick: onEventClick
   };
 
   // This function populates the calendar with the user's events on page load
-  function pop_events()
+  export function pop_events(obj)
   {
     let event = {
-      id: 69,
+      // id: 69,
+      title: obj.title,
+      start: obj.date,
       allDay: true,
-      title: "Test Event",
-      backgroundColor: "#ffcb82"
+      // title: "Test Event",
+      backgroundColor: "#ffcb82" // This defines the color of the event
     }
 
     tmp = cal_inst.addEvent(event);
   }
 
-  function remove_test()
-  {
-    cal_inst.removeEventById(tmp.id);
-  }
-
 </script>
 
 <button on:click={pop_events}>add events</button>
-<button on:click={remove_test}>remove test event</button>
 <Calendar bind:this={cal_inst} {plugins} {options}/>

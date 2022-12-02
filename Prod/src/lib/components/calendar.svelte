@@ -14,7 +14,7 @@
   function onDateClick(info)
   {
     selected_date = info.date;
-    console.log(selected_date);
+    //console.log(selected_date);
   }
 
   // Gee what could this do I wonder
@@ -32,7 +32,6 @@
   }
 
   let cal_inst;
-  let tmp; // DEBUG
   let plugins = [TimeGrid, Interaction];
   let options = {
       view: 'dayGridMonth',
@@ -51,12 +50,15 @@
       title: obj.title,
       start: obj.datestart,
       end: obj.dateend,
-      allDay: true,
-      // title: "Test Event",
+      // allDay: true,
       backgroundColor: "#ffcb82" // This defines the color of the event
     }
 
-    tmp = cal_inst.addEvent(event);
+    console.log(event.start);
+    console.log(event.end);
+
+    let cal_event = cal_inst.addEvent(event).start;
+    console.log(cal_event);
   }
 
   export function removeEvent(id){

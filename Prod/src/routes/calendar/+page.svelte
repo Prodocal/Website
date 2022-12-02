@@ -22,7 +22,6 @@
 
     function AddEvent(data)
     {
-        //console.log(data.detail.title);
         if (cal != undefined) cal.pop_events(data.detail);
     }
 

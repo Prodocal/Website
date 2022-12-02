@@ -15,12 +15,15 @@
         organization: undefined,
         class: undefined,
         type: undefined,
-        datestart: undefined,
-        dateend: undefined,
+        datestart: new Date(),
+        dateend: new Date(),
+    };
+
+    const time = {
         hour: undefined,
         min: undefined,
         ampm: undefined
-    };
+    }
     
     // const addEvent = new CustomEvent('create_event', {
     //     detail: obj,
@@ -38,6 +41,9 @@
     function form_submit(){
         
         //console.log(obj.title);
+
+        /*obj.datestart.setMinutes(time.min);*/
+        /*obj.datestart.setHours((time.ampm == "AM") ? 12: time.hour + 12);*/
 
         dispatch('make', obj);
 
@@ -93,7 +99,7 @@
                     <div>
                         <img src={ClockIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                         <div class="flex bg-white input w-full max-w-xs rounded-full mb-2 shadow-xl pl-11">
-                            <select name="hour" class="mr-1 text-lg appearance-none" bind:value={obj.hour}>
+                            <select name="hour" class="mr-1 text-lg appearance-none" bind:value={time.hour}>
                                 <option value="1">01</option>
                                 <option value="2">02</option>
                                 <option value="3">03</option>
@@ -110,19 +116,21 @@
 
                             <span class="text-lg mr-1 mt-2">:</span>
 
-                            <select name="min" class="mr-1 text-lg appearance-none" bind:value={obj.min}>
+                            <select name="min" class="mr-1 text-lg appearance-none" bind:value={time.min}>
                                 <option value="00">00</option>
                                 <option value="15">15</option>
                                 <option value="30">30</option>
                                 <option value="45">45</option>
                             </select>
 
-                            <select name="ap" class="text-lg appearance-none" bind:value={obj.ampm}>
+                            <select name="ap" class="text-lg appearance-none" bind:value={time.ampm}>
                                 <option value="AM">AM</option>
                                 <option value="PM">PM</option>
                             </select>
                         </div>
                     </div>
+
+                    
 
                     <div class="modal-actions card-actions">
                         <button type="submit" for="my-modal" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl" on:click={form_submit()}>

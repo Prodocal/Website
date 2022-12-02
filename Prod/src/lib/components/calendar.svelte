@@ -4,8 +4,11 @@
   import Interaction from '@event-calendar/interaction'
   // This is a reference to the component for creating events
   import CreateEvent from "$lib/components/Create.svelte";
+  import { createEventDispatcher } from 'svelte';
 
   let selected_date;
+
+  const dispatchEC = createEventDispatcher();
 
   // What it sounds like
   function onDateClick(info)
@@ -17,11 +20,15 @@
   // Gee what could this do I wonder
   function onEventClick(info)
   {
-    let event_ref = info.event;
-    console.log(event_ref.start);
+    //console.log(info.title);
+
+    dispatchEC('eventclick', info);
+
+    /*let event_ref = info.event;
+    console.log(event_ref.title);*/
 
     // For testing it just removes the event
-    // cal_inst.removeEventById(event_ref.id);
+    /*cal_inst.removeEventById(event_ref.id);*/
   }
 
   let cal_inst;
@@ -32,7 +39,7 @@
           // your list of events
       ],
       dateClick: onDateClick,
-      eventClick: onEventClick
+      eventClick: onEventClick,
   };
 
   // This function populates the calendar with the user's events on page load
@@ -54,7 +61,13 @@
     console.log(cal_event);
   }
 
+  export function removeEvent(id){
+    cal_inst.removeEventById(id);
+  }
+
+
 </script>
 
+
 <button on:click={pop_events}>add events</button>
-<Calendar bind:this={cal_inst} {plugins} {options}/>
+<Calendar bind:this={cal_inst} {plugins} {options} on:deleteevent={removeEvent}/>

@@ -33,7 +33,6 @@
         datestart: undefined,
         dateend: undefined,
     };
-
     
     // const addEvent = new CustomEvent('create_event', {
     //     detail: obj,
@@ -57,6 +56,9 @@
         // console.log(obj.datestart);
         end_time.hour = ((end_time.ampm == "AM") ? end_time.hour : parseInt(end_time.hour) + 12)
         obj.dateend += "T"+ end_time.hour + ":" + end_time.min;
+
+        /*obj.datestart.setMinutes(time.min);*/
+        /*obj.datestart.setHours((time.ampm == "AM") ? 12: time.hour + 12);*/
 
         dispatch('make', obj);
 
@@ -176,6 +178,8 @@
                             </select>
                         </div>
                     </div>
+
+                    
 
                     <div class="modal-actions card-actions">
                         <button type="submit" for="my-modal" class="text-[#FFAB9F] text-lg bg-white hover:text-[#31302e] rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl" on:click={form_submit()}>

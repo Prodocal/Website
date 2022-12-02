@@ -7,9 +7,24 @@
     import CalEndIcon from "$lib/assets/calendarend.svg";
     import ClockIcon from "$lib/assets/clock.svg";
     import { createEventDispatcher } from 'svelte';
-
+    
     const dispatch = createEventDispatcher();
+    
+    // Start time of event
+    const start_time = {
+        hour: undefined,
+        min: undefined,
+        ampm: undefined
+    };
+    
+    // End time of event
+    const end_time = {
+        hour: undefined,
+        min: undefined,
+        ampm: undefined
+    };
 
+    // Object passed to the calendar
     const obj = {
         title: undefined,
         organization: undefined,
@@ -17,10 +32,8 @@
         type: undefined,
         datestart: undefined,
         dateend: undefined,
-        hour: undefined,
-        min: undefined,
-        ampm: undefined
     };
+
     
     // const addEvent = new CustomEvent('create_event', {
     //     detail: obj,
@@ -37,7 +50,13 @@
 
     function form_submit(){
         
-        //console.log(obj.title);
+
+        start_time.hour = ((start_time.ampm == "AM") ? start_time.hour : parseInt(start_time.hour) + 12)
+        obj.datestart += "T"+ start_time.hour + ":" + start_time.min;
+        // Debug
+        // console.log(obj.datestart);
+        end_time.hour = ((end_time.ampm == "AM") ? end_time.hour : parseInt(end_time.hour) + 12)
+        obj.dateend += "T"+ end_time.hour + ":" + end_time.min;
 
         dispatch('make', obj);
 
@@ -84,16 +103,11 @@
                         <input type="date" placeholder="date" aria-label="Starts" class="text-lg text-[#31302e] bg-white input w-full max-w-xs rounded-full mb-2 shadow-xl pl-11" bind:value={obj.datestart}/>
                         <img src={CalIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
-                    
-                    <div class="card-actions justify-start mb-1">
-                        <input type="date" placeholder="date" aria-label="Ends" class="text-lg text-[#31302e] bg-white input w-full max-w-xs rounded-full mb-2 shadow-xl pl-11" bind:value={obj.dateend}/>
-                        <img src={CalEndIcon} class="absolute w-8 ml-2 mt-2" alt="?">
-                    </div>
 
                     <div>
                         <img src={ClockIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                         <div class="flex bg-white input w-full max-w-xs rounded-full mb-2 shadow-xl pl-11">
-                            <select name="hour" class="mr-1 text-lg appearance-none" bind:value={obj.hour}>
+                            <select name="hour" class="mr-1 text-lg appearance-none" bind:value={start_time.hour}>
                                 <option value="1">01</option>
                                 <option value="2">02</option>
                                 <option value="3">03</option>
@@ -110,14 +124,53 @@
 
                             <span class="text-lg mr-1 mt-2">:</span>
 
-                            <select name="min" class="mr-1 text-lg appearance-none" bind:value={obj.min}>
+                            <select name="min" class="mr-1 text-lg appearance-none" bind:value={start_time.min}>
                                 <option value="00">00</option>
                                 <option value="15">15</option>
                                 <option value="30">30</option>
                                 <option value="45">45</option>
                             </select>
 
-                            <select name="ap" class="text-lg appearance-none" bind:value={obj.ampm}>
+                            <select name="ap" class="text-lg appearance-none" bind:value={start_time.ampm}>
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="card-actions justify-start mb-1">
+                        <input type="date" placeholder="date" aria-label="Ends" class="text-lg text-[#31302e] bg-white input w-full max-w-xs rounded-full mb-2 shadow-xl pl-11" bind:value={obj.dateend}/>
+                        <img src={CalEndIcon} class="absolute w-8 ml-2 mt-2" alt="?">
+                    </div>
+
+                    <div>
+                        <img src={ClockIcon} class="absolute w-8 ml-2 mt-2" alt="?">
+                        <div class="flex bg-white input w-full max-w-xs rounded-full mb-2 shadow-xl pl-11">
+                            <select name="hour" class="mr-1 text-lg appearance-none" bind:value={end_time.hour}>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+
+                            <span class="text-lg mr-1 mt-2">:</span>
+
+                            <select name="min" class="mr-1 text-lg appearance-none" bind:value={end_time.min}>
+                                <option value="00">00</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                            </select>
+
+                            <select name="ap" class="text-lg appearance-none" bind:value={end_time.ampm}>
                                 <option value="AM">AM</option>
                                 <option value="PM">PM</option>
                             </select>

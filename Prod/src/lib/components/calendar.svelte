@@ -11,21 +11,20 @@
   function onDateClick(info)
   {
     selected_date = info.date;
-    console.log(selected_date);
+    //console.log(selected_date);
   }
 
   // Gee what could this do I wonder
   function onEventClick(info)
   {
     let event_ref = info.event;
-    console.log(event_ref.title);
+    console.log(event_ref.start);
 
     // For testing it just removes the event
-    cal_inst.removeEventById(event_ref.id);
+    // cal_inst.removeEventById(event_ref.id);
   }
 
   let cal_inst;
-  let tmp; // DEBUG
   let plugins = [TimeGrid, Interaction];
   let options = {
       view: 'dayGridMonth',
@@ -42,13 +41,17 @@
     let event = {
       // id: 69,
       title: obj.title,
-      start: obj.date,
-      allDay: true,
-      // title: "Test Event",
+      start: obj.datestart,
+      end: obj.dateend,
+      // allDay: true,
       backgroundColor: "#ffcb82" // This defines the color of the event
     }
 
-    tmp = cal_inst.addEvent(event);
+    console.log(event.start);
+    console.log(event.end);
+
+    let cal_event = cal_inst.addEvent(event).start;
+    console.log(cal_event);
   }
 
 </script>

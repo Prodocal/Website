@@ -11,7 +11,12 @@
 
     function AddEvent(data)
     {
-        console.log(data.detail.title);
+        // console.log(data.detail.title);
+
+        // Have to adjust the times here because of how we get the date from input
+        // data.detail.datestart.setHours(data.detail.timestart.hour, data.detail.timestart.min);
+        // data.detail.dateend.setHours(data.detail.timeend.hour, data.detail.timeend.min);
+
         if (cal != undefined) cal.pop_events(data.detail);
     }
     

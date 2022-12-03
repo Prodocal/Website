@@ -1,69 +1,77 @@
-export function validateForm(obj, pass2){  
+export function validateForm(obj, err, pass2){  
     //collect form data in JavaScript variables  
-    var pw = object.password;    // Password string
-    var cpw = object.pass2;   // Confirm password string 
-    var fname = object.firstname;     // First name string
-    var lname = object.lastname;     // Last name string
-    var em = object.email;      // email string
-    var pnum = object.phone;    // phone number string
-    var uname = object.username;    // username string   
+    var pw = obj.password;    // Password string
+    var cpw = pass2;   // Confirm password string 
+    var fname = obj.firstname;     // First name string
+    var lname = obj.lastname;     // Last name string
+    var em = obj.email;      // email string
+    var pnum = obj.phone;    // phone number string
+    var uname = obj.username;    // username string   
     
+    err.fname_err = '';
+    err.name_err = '';
+    err.em_err = '';
+    err.uname_err = '';
+    err.pw_err = '';
+    err.cpw_err = '';
+
     /* First name*/
     // Check empty fields
-    if (fname == "") {  
-      document.getElementById("blankMsg").innerHTML = "Please enter a first name.";  
-      return false;  
-    }
-    //character data validation  
+    if (fname == '') {  
+        err.fname_err = 'Please enter a first name.';  
+    } 
+    // Character data validation. 
     if(!isNaN(fname)){  
-      document.getElementById("blankMsg").innerHTML = "Please enter a valid name.";  
-      return false;  
-    }  
-
+        err.fname_err = 'Please enter a valid name.';  
+    }
 
     /* Last name*/
     // Check empty fields.
     if (lname == "") {  
-        document.getElementById("blankMsg").innerHTML = "Please enter a last name.";  
-        return false;  
+        err.name_err = "Please enter a last name.";   
     } 
     // Character data validation.
     if(!isNaN(lname)){  
-        document.getElementById("charMsg").innerHTML = "Please enter a valid name.";  
+        err.name_err += "Please enter a valid name.";  
         return false;  
     }  
     
     /* Email */
     // Check empty fields.
     if (em == "") {  
-        document.getElementById("blankMsg").innerHTML = "Please enter an email address.";  
-        return false;  
+        err.em_err = "Please enter an email address.";  
     } 
-    // Format validation
+    // Format validation.
+    if (!(em.indexOf('@') > -1)) {
+        err.em_err = "Please enter a valid email address.";  
+    }
+
+    /* Username */
+    // Check empty fields.
+    if (uname == "") {  
+        err.uname_err = "Please enter username.";  
+    } 
+    // Format validation.
+    if (uname.length < 4) {
+        err.uname_err = "The username you provided must have at least 4 characters.";  
+    }
 
     //check empty password field  
     if(pw == "") {  
-      document.getElementById("message1").innerHTML = "**Fill the password please!";  
-      return false;  
+        err.pw_err = "Please enter password.";  
     }  
     
     //check empty confirm password field  
     if(cpw == "") {  
-      document.getElementById("message2").innerHTML = "**Enter the password please!";  
-      return false;  
+        err.cpw_err = "Please enter password.";  
     }   
      
     //minimum password length validation  
     if(pw.length < 8) {  
-      document.getElementById("message1").innerHTML = "**Password length must be atleast 8 characters";  
-      return false;  
+        err.pw_err = "The password you provided must have at least 8 characters.";   
     }  
     
     if(pw != cpw) {  
-      document.getElementById("message2").innerHTML = "**Passwords are not same";  
-      return false;  
-    } else {  
-      alert ("Your password created successfully");  
-      document.write("JavaScript form has been submitted successfully");  
-    }  
+      err.cpw_err = "Passwords do not match.";  
+    }
  }

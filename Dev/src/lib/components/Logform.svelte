@@ -58,17 +58,17 @@
             </div>
 
             <!-- signup -->
-            <div class="card-body" class:hidden={activeTab != 1}>
-                <form class="form-control w-full max-w-xs" on:submit|preventDefault={newUser(obj)}>
+            <form action="?/register" method="POST" class="flex flex-col items-center space-y-2 w-full pt-4">
+                <div class="card-body" class:hidden={activeTab != 1}>
                     <div class="card-actions justify-start mb-2">
-                        <input type="text" placeholder="first name" class="input w-full max-w-xs flex-1 bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl" bind:value={obj.firstname} />
-                        <input type="text" placeholder="last name" class="input w-full max-w-xs flex-1 bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl" bind:value={obj.lastname}/>
+                        <input type="text" name = "name" placeholder="first name" class="input w-full max-w-xs flex-1 bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl"/>
+                        <!--<input type="text" name = "lname" placeholder="last name" class="input w-full max-w-xs flex-1 bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl"/>-->
                     </div>
                     <div class="card-actions justify-start mb-2">
-                        <input type="text" placeholder="email" class="input w-full max-w-xs bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl pl-11" bind:value={obj.email}/>
+                        <input type="email" name = "email" placeholder="email" class="input w-full max-w-xs bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl pl-11"/>
                         <img src={EmailIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
-                    <div class="card-actions justify-start mb-4">
+                    <!--<div class="card-actions justify-start mb-4">
                         <input type="text" placeholder="phone number" class="input w-full max-w-xs bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl pl-11" bind:value={obj.phone}/>
                         <img src={PhoneIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
@@ -76,15 +76,15 @@
                     <div class="card-actions justify-start">
                         <input type="text" placeholder="username" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.username}/>
                         <img src={UsernameIcon} class="absolute w-8 ml-2 mt-2" alt="?">
-                    </div>
+                    </div>-->
 
                     <div class="card-actions justify-start">
-                        <input type="text" placeholder="password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11"/>
+                        <input type="password" name = "password" placeholder="password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11"/>
                         <img src={PasswordIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 
                     <div class="card-actions justify-start">
-                        <input type="text" placeholder="re-enter password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.password}/>
+                        <input type="password" name = "passwordConfirm" placeholder="re-enter password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11"/>
                         <img src={PasswordIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 
@@ -93,8 +93,8 @@
                             <a href="/calendar" class="font-extrabold">Signup</a>
                         </button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </main>

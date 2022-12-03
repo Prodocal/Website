@@ -15,6 +15,7 @@ export const actions = {
 			throw error(500, 'Something went wrong');
 		}
 
-		throw redirect(303, '/login');
-	}
+		throw redirect(303, '/calendar');
+	},
+
 };

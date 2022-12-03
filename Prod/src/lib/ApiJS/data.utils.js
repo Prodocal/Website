@@ -5,7 +5,7 @@ export const user = {
     firstName: undefined,
     lastName: undefined,
     email: undefined,
-    phone:undefined,
+    phone: undefined,
 };
 
 export const event = {
@@ -14,6 +14,14 @@ export const event = {
     organization: undefined,
     class: undefined,
     type: undefined,
+};
+
+export const stderr = {
+    name_err: undefined,
+    em_err: undefined,
+    uname_err: undefined,
+    pw_err: undefined,
+    cpw_err: undefined,
 };
 
 export function validateLogin(user){
@@ -35,4 +43,3 @@ export function newEvent(event){
     // let obj = Object.create(event);
     console.log(event);
 };
-

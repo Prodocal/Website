@@ -4,37 +4,70 @@
   import Interaction from '@event-calendar/interaction'
   // This is a reference to the component for creating events
   import CreateEvent from "$lib/components/Create.svelte";
+  import { createEventDispatcher } from 'svelte';
+
+  let selected_date;
+
+  const dispatchEC = createEventDispatcher();
+
+  // What it sounds like
+  function onDateClick(info)
+  {
+    selected_date = info.date;
+    //console.log(selected_date);
+  }
+
+  // Gee what could this do I wonder
+  function onEventClick(info)
+  {
+    //console.log(info.title);
+
+    dispatchEC('eventclick', info);
+
+    /*let event_ref = info.event;
+    console.log(event_ref.title);*/
+
+    // For testing it just removes the event
+    /*cal_inst.removeEventById(event_ref.id);*/
+  }
 
   let cal_inst;
-  let tmp; // DEBUG
   let plugins = [TimeGrid, Interaction];
   let options = {
       view: 'dayGridMonth',
       events: [
           // your list of events
-      ]
+      ],
+      dateClick: onDateClick,
+      eventClick: onEventClick,
   };
 
   // This function populates the calendar with the user's events on page load
-  function pop_events()
+  export function pop_events(obj)
   {
     let event = {
-      id: 69,
-      allDay: true,
-      title: "Test Event",
-      backgroundColor: "#ffcb82"
+      // id: 69,
+      title: obj.title,
+      start: obj.datestart,
+      end: obj.dateend,
+      // allDay: true,
+      backgroundColor: "#ffcb82" // This defines the color of the event
     }
 
-    tmp = cal_inst.addEvent(event);
+    console.log(event.start);
+    console.log(event.end);
+
+    let cal_event = cal_inst.addEvent(event).start;
+    console.log(cal_event);
   }
 
-  function remove_test()
-  {
-    cal_inst.removeEventById(tmp.id);
+  export function removeEvent(id){
+    cal_inst.removeEventById(id);
   }
+
 
 </script>
 
+
 <button on:click={pop_events}>add events</button>
-<button on:click={remove_test}>remove test event</button>
-<Calendar bind:this={cal_inst} {plugins} {options}/>
+<Calendar bind:this={cal_inst} {plugins} {options} on:deleteevent={removeEvent}/>

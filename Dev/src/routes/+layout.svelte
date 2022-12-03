@@ -5,7 +5,7 @@
 </script>
 
 <body data-theme="light" class="bg-gradient-to-br from-[#FAE1A7] to-[#FFAB9F]">
-    {#if $page.url.pathname !== '/'}
+    {#if $page.url.pathname !== '/' && $page.url.pathname !== '/register'}
         <Navbar/>
     {/if}
 

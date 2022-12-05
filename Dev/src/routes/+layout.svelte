@@ -2,14 +2,18 @@
     import "../app.postcss";
     import Navbar from "$lib/components/Navbar.svelte";
     import { page } from '$app/stores';
+    import navPub from "$lib/components/navPub.svelte";
+	import NavPub from "$lib/components/navPub.svelte";
 </script>
 
-<body data-theme="light" class="bg-gradient-to-br from-[#FAE1A7] to-[#FFAB9F]">
+<body data-theme="autumn">
     {#if $page.url.pathname !== '/' && $page.url.pathname !== '/register'}
         <Navbar/>
+    {:else}
+        <NavPub/>
     {/if}
 
-    <slot></slot>
+    <slot/>
 </body>
 
 <style>

@@ -1,6 +1,4 @@
 <script>
-    import MonthView from "$lib/components/MonthView.svelte";
-    import Month from "$lib/components/calendar/Month.svelte";
     import Create from "$lib/components/Create.svelte";
     import Calendar from "$lib/components/calendar.svelte";
     import { createEventDispatcher } from 'svelte';

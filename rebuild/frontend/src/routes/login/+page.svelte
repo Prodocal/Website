@@ -4,6 +4,8 @@
     import EmailIcon from "$lib/assets/email.svg";
     import PhoneIcon from "$lib/assets/phonenumber.svg";
     import Logo from "$lib/assets/logo.svg";
+
+
 </script>
 
 <main class="flex justify-center pt-10">
@@ -32,6 +34,7 @@
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
 </main>

@@ -61,13 +61,16 @@
     // console.log(cal_event);
   }
 
+  // This function removes events from the calendar and the database
   export function RemoveEvent(id){
     cal_inst.removeEventById(id);
+
+    // TODO: Remove from DB
   }
 
 
 </script>
 
 
-<button class="btn btn-warning w-32" on:click={AddEvent}>Add Debug Event</button>
 <Calendar bind:this={cal_inst} {plugins} {options} on:deleteevent={RemoveEvent}/>
+<button class="btn btn-warning w-32" on:click={AddEvent}>Add Debug Event</button>

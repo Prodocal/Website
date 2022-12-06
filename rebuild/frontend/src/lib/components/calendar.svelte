@@ -41,6 +41,7 @@
       dateClick: onDateClick,
       eventClick: onEventClick,
       eventStartEditable: false,
+      eventBackgroundColor: '#ffcb82', // This is the default color of events on the calendar
   };
 
   // This function adds a single event to the calendar and the database

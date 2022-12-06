@@ -42,14 +42,14 @@
       eventClick: onEventClick,
   };
 
-  // This function populates the calendar with the user's events on page load
-  export function PopulateEvents(obj)
+  // This function adds a single event to the calendar and the database
+  export function AddEvent(input)
   {
     let event = {
       // id: 69,
-      title: obj.title,
-      start: obj.datestart,
-      end: obj.dateend,
+      title: input.title,
+      start: input.start_date,
+      end: input.end_date,
       // allDay: true,
       backgroundColor: "#ffcb82" // This defines the color of the event
     }
@@ -69,5 +69,5 @@
 </script>
 
 
-<button on:click={PopulateEvents}>add events</button>
+<button on:click={AddEvent}>add events</button>
 <Calendar bind:this={cal_inst} {plugins} {options} on:deleteevent={RemoveEvent}/>

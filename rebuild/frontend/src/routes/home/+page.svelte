@@ -60,8 +60,8 @@
 </script>
 
 <main class="flex">
-    <ul class="menu w-[20vw] h-[92vh] bg-base-200 flex items-center">
-        <button class="btn btn-success" on:click={ToggleCreationModal}>Create Event</button>
+    <ul class="menu w-[20vw] h-[92vh] p-4 bg-base-200 flex items-center">
+        <li><button class="btn btn-success" on:click={ToggleCreationModal}>Create Event</button></li>
     </ul>
 
     <div class="card w-full bg-base-100 flex justify-center items-center">

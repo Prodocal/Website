@@ -64,8 +64,8 @@
         <button class="btn btn-success" on:click={ToggleCreationModal}>Create Event</button>
     </ul>
 
-    <div class=" card w-[80vw] h-[92vh] bg-base-100 flex justify-center items-center">
-            <div class="card-body">
+    <div class="card w-full bg-base-100 flex justify-center items-center">
+            <div class="card-body w-full h-screen">
                 <Calendar bind:this={cal_ref} on:eventclick={ShowEventInfo}/>
             </div>
     </div>

@@ -69,5 +69,5 @@
 </script>
 
 
-<button on:click={pop_events}>add events</button>
-<Calendar bind:this={cal_inst} {plugins} {options} on:deleteevent={removeEvent}/>
+<button on:click={PopulateEvents}>add events</button>
+<Calendar bind:this={cal_inst} {plugins} {options} on:deleteevent={RemoveEvent}/>

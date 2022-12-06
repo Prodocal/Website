@@ -4,6 +4,8 @@
     import EmailIcon from "$lib/assets/email.svg";
     import PhoneIcon from "$lib/assets/phonenumber.svg";
     import Logo from "$lib/assets/logo.svg";
+
+    
 </script>
 
 <main class="flex justify-center pt-0">
@@ -17,21 +19,11 @@
                     <div class="card-actions justify-start mb-2">
                         <input type="text" name="username" placeholder="username" class="input w-full max-w-xs flex-1 bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl pl-11"/>
                         <img src={UsernameIcon} class="absolute w-8 ml-2 mt-2" alt="?">
-                        <!--<input type="text" name = "lname" placeholder="last name" class="input w-full max-w-xs flex-1 bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl"/>-->
                     </div>
                     <div class="card-actions justify-start mb-2">
                         <input type="email" name="email" placeholder="email" class="input w-full max-w-xs flex-1 bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl pl-11"/>
                         <img src={EmailIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
-                    <!--<div class="card-actions justify-start mb-4">
-                        <input type="text" placeholder="phone number" class="input w-full max-w-xs bg-white text-[#31302e] placeholder-[#FFAB9F] rounded-full shadow-xl pl-11" bind:value={obj.phone}/>
-                        <img src={PhoneIcon} class="absolute w-8 ml-2 mt-2" alt="?">
-                    </div>
-
-                    <div class="card-actions justify-start">
-                        <input type="text" placeholder="username" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11" bind:value={obj.username}/>
-                        <img src={UsernameIcon} class="absolute w-8 ml-2 mt-2" alt="?">
-                    </div>-->
 
                     <div class="card-actions justify-start">
                         <input type="password" name = "password" placeholder="password" class="bg-white input w-full text-[#31302e] max-w-xs rounded-full mb-2 shadow-xl placeholder-[#FFAB9F] pl-11"/>

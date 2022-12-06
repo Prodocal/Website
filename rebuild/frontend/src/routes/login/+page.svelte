@@ -16,7 +16,7 @@
             <form  action="?/login" method="POST" class="form-control w-full max-w-xs">
                 <div class="card-body">
                     <div class="card-actions justify-start">
-                        <input type="text"  name="username" placeholder="username" class="bg-white input w-full text-primary-focus max-w-xs rounded-full mb-2 shadow-xl placeholder-primary pl-11"/>
+                        <input type="text" name="username" placeholder="username" class="bg-white input w-full text-primary-focus max-w-xs rounded-full mb-2 shadow-xl placeholder-primary pl-11"/>
                         <img src={UsernameIcon} class="absolute w-8 ml-2 mt-2" alt="?">
                     </div>
 

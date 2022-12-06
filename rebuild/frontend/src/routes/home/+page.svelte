@@ -84,7 +84,7 @@
                     <p class="py-4"> End Date: {selected_event.end}</p>
 
                     <div class="modal-action">
-                        <button for="modal-box" class="btn btn-error" on:click={RemoveEvent}> Delete Event</button>
+                        <button for="modal-box" class="btn btn-error" on:click={RemoveEvent}>Delete</button>
                     </div>
                 </div>    
             </div>         
@@ -120,7 +120,7 @@
                     </div>
 
                     <div class="modal-action">
-                        <button for="modal-box" class="btn btn-success" on:click={AddEvent}>Create Event</button>
+                        <button for="modal-box" class="btn btn-success" on:click={AddEvent}>Create</button>
                     </div>
 
                 </div>    

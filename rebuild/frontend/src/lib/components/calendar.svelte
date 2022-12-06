@@ -42,32 +42,35 @@
       eventClick: onEventClick,
   };
 
-  // This function populates the calendar with the user's events on page load
-  export function pop_events(obj)
+  // This function adds a single event to the calendar and the database
+  export function AddEvent(input)
   {
     let event = {
       // id: 69,
-      title: obj.title,
-      start: obj.datestart,
-      end: obj.dateend,
+      title: input.title,
+      start: input.start_date,
+      end: input.end_date,
       // allDay: true,
-      backgroundColor: "#ffcb82" // This defines the color of the event
+      backgroundColor: input.color // This defines the color of the event
     }
 
-    console.log(event.start);
-    console.log(event.end);
+    // console.log(event.start);
+    // console.log(event.end);
 
     let cal_event = cal_inst.addEvent(event).start;
-    console.log(cal_event);
+    // console.log(cal_event);
   }
 
-  export function removeEvent(id){
+  // This function removes events from the calendar and the database
+  export function RemoveEvent(id){
     cal_inst.removeEventById(id);
+
+    // TODO: Remove from DB
   }
 
 
 </script>
 
 
-<button on:click={pop_events}>add events</button>
-<Calendar bind:this={cal_inst} {plugins} {options} on:deleteevent={removeEvent}/>
+<Calendar bind:this={cal_inst} {plugins} {options} on:deleteevent={RemoveEvent}/>
+<button class="btn btn-warning w-32" on:click={AddEvent}>Add Debug Event</button>

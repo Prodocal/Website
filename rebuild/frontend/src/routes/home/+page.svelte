@@ -1,5 +1,6 @@
 <script>
     import Month from "$lib/components/month.svelte";
+    import Calendar from "$lib/components/calendar.svelte"
 </script>
 
 <main class="flex">
@@ -9,7 +10,7 @@
 
     <div class=" card w-[80vw] h-[92vh] bg-base-100 flex justify-center items-center">
             <div class="card-body">
-                <Month/>
+                <Calendar/>
             </div>
     </div>
 </main>

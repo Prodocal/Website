@@ -43,7 +43,7 @@
   };
 
   // This function populates the calendar with the user's events on page load
-  export function pop_events(obj)
+  export function PopulateEvents(obj)
   {
     let event = {
       // id: 69,
@@ -61,7 +61,7 @@
     console.log(cal_event);
   }
 
-  export function removeEvent(id){
+  export function RemoveEvent(id){
     cal_inst.removeEventById(id);
   }
 

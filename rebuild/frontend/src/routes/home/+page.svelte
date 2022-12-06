@@ -120,7 +120,7 @@
                     </div>
 
                     <div class="modal-action">
-                        <button for="modal-box" class="btn btn-success" on:click={AddEvent}>Create Event</button>
+                        <button for="modal-box" class="btn btn-success" on:click={AddEvent}>Create</button>
                     </div>
 
                 </div>    

@@ -10,9 +10,7 @@
     <div class="card w-96 bg-base-200">
         <div class="card-body items-center text-center">
             <img class="mt-1" src={Logo} alt="ProdoCal" width="100"/>
-        </div>
 
-        <div class="card-body items-center text-center">
             <form  action="?/login" method="POST" class="form-control w-full max-w-xs">
                 <div class="card-body">
                     <div class="card-actions justify-start">
@@ -28,7 +26,7 @@
                         <p>New user? Signup <a href="/signup" class="text-primary hover:text-accent">here</a>!</p>
                     </div>
                     <div class="card-actions justify-center">
-                        <button type="submit" class="text-primary text-lg bg-white hover:text-accent-focus rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl">
+                        <button type="submit" class="text-primary text-lg bg-white hover:text-accent-focus rounded-full px-10 py-2.5 text-center mt-8 mr-2 mb-2 shadow-xl font-extrabold">
                             login
                         </button>
                     </div>

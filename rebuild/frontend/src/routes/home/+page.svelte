@@ -73,17 +73,15 @@
     <!-- The EventInfo modal -->
     <div>
         {#if showInfoModal} 
+            <input type="checkbox" id="info_modal">
             <div for="modal-box" class="modal modal-open"> 
                 <div class="modal-box">
+                    <label for="info_modal" class="btn btn-sm btn-warning btn-circle absolute right-2 top-2" on:click={ToggleInfoModal}>✕</label>
                     
                     <h3 class="font-bold text-lg"> {selected_event.title} </h3>
 
                     <p class="py-4"> Start Date: {selected_event.start}</p>
                     <p class="py-4"> End Date: {selected_event.end}</p>
-                        
-                    <div class="modal-action">
-                        <button for="modal-box" class="btn btn-warning" on:click={ToggleInfoModal}>Close</button>
-                    </div>
 
                     <div class="modal-action">
                         <button for="modal-box" class="btn btn-error" on:click={RemoveEvent}> Delete Event</button>
@@ -96,8 +94,10 @@
     <!-- The Event Creation Modal -->
     <div>
         {#if showCreationModal} 
+            <input type="checkbox" id="creation_modal">
             <div for="modal-box" class="modal modal-open"> 
                 <div class="modal-box">
+                    <label for="info_modal" class="btn btn-sm btn-warning btn-circle absolute right-2 top-2" on:click={ToggleCreationModal}>✕</label>                    
                     <div class="form-control">
                         <input type="text" placeholder="Event Title" class="input input-bordered input-info w-full max-w-xs" bind:value={creation_input.title}/>
                         <input type="text" placeholder="Organization (optional)" class="input input-bordered input-info w-full max-w-xs" bind:value={creation_input.organization}/>
@@ -120,7 +120,7 @@
                     </div>
 
                     <div class="modal-action">
-                        <button for="modal-box" class="btn btn-success" on:click={AddEvent}>Create</button>
+                        <button for="modal-box" class="btn btn-success" on:click={AddEvent}>Create Event</button>
                     </div>
 
                 </div>    

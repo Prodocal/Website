@@ -1,12 +1,21 @@
 <script>
     import Calendar from "$lib/components/calendar.svelte"
     import DateTimeSelector from 'svelty-picker'
+    import {HsvPicker} from 'svelte-color-picker'
 
     let cal_ref;
     let creation_input = {};
     let selected_event = {};
     let showInfoModal = false;
     let showCreationModal = false;
+
+    // Callback function for the color picker
+    function ColorSet(rgba)
+    {
+        let color = 'rgb(' + rgba.detail.r + ',' + rgba.detail.g + ',' + rgba.detail.b + ')';
+        // console.log(color);
+        creation_input.color = color;        
+    }
 
     // HMMMMMMMM
     function ToggleInfoModal()
@@ -105,6 +114,8 @@
                             <span>Event End</span>
                             <DateTimeSelector inputClasses="form-control" startDate={creation_input.start_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.end_date}></DateTimeSelector>
                         </label>
+
+                        <HsvPicker on:colorChange={ColorSet} startColor={"#ffcb82"}/>
                         
                     </div>
 

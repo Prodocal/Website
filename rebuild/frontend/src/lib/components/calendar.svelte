@@ -51,14 +51,14 @@
       start: input.start_date,
       end: input.end_date,
       // allDay: true,
-      backgroundColor: "#ffcb82" // This defines the color of the event
+      backgroundColor: input.color // This defines the color of the event
     }
 
-    console.log(event.start);
-    console.log(event.end);
+    // console.log(event.start);
+    // console.log(event.end);
 
     let cal_event = cal_inst.addEvent(event).start;
-    console.log(cal_event);
+    // console.log(cal_event);
   }
 
   export function RemoveEvent(id){

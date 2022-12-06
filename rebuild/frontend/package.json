@@ -35,6 +35,7 @@
 		"@ungap/custom-elements": "^1.1.1",
 		"daisyui": "^2.31.0",
 		"pocketbase": "^0.8.2",
+		"svelte-color-picker": "^1.0.7",
 		"svelty-picker": "^3.2.3"
 	}
 }

@@ -40,6 +40,7 @@
       ],
       dateClick: onDateClick,
       eventClick: onEventClick,
+      eventStartEditable: false,
   };
 
   // This function adds a single event to the calendar and the database

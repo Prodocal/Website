@@ -36,7 +36,7 @@ export const actions = {
         }
         catch (err) {
             console.log('Error: ', err);
-            throw error(500, 'Something went wrong')
+            throw error(500, 'Something went wrong');
         }
     }
 };

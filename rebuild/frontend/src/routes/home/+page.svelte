@@ -106,7 +106,7 @@
                         <!-- Start date selection -->
                         <label class="input-group input-group-md">
                             <span>Event Start</span>
-                            <DateTimeSelector inputClasses="form-control" endDate={creation_input.end_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.start_date}></DateTimeSelector>
+                            <DateTimeSelector inputClasses="form-control" startDate={Date.now()} endDate={creation_input.end_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.start_date}></DateTimeSelector>
                         </label>
 
                         <!-- End date selection -->

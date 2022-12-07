@@ -60,12 +60,12 @@
 </script>
 
 <main class="flex">
-    <ul class="menu w-[20vw] h-[92vh] p-4 bg-base-200 flex items-center">
-        <li><button class="btn btn-success" on:click={ToggleCreationModal}>Create Event</button></li>
+    <ul class="menu w-[20vw] h-[92vh] bg-base-200 flex items-center pt-8">
+        <button class="btn btn-success" on:click={ToggleCreationModal}>Create Event</button>
     </ul>
 
     <div class="card w-full bg-base-100 flex justify-center items-center">
-            <div class="card-body w-full h-screen">
+            <div class="card-body w-full h-screen overflow-y-auto pb-24">
                 <Calendar bind:this={cal_ref} on:eventclick={ShowEventInfo}/>
             </div>
     </div>
@@ -108,7 +108,7 @@
                             <!-- Start date selection -->
                             <label class="input-group input-group-md">
                                 <span>Event Start</span>
-                                <DateTimeSelector  type="text" name="startDate" endDate={creation_input.end_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.start_date}></DateTimeSelector>
+                                <DateTimeSelector  type="text" name="startDate" startDate={Date.now()} endDate={creation_input.end_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.start_date}></DateTimeSelector>
                             </label>
 
                             <!-- End date selection -->

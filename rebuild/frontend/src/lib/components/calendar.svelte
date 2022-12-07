@@ -1,6 +1,7 @@
 <script>
   import Calendar from '@event-calendar/core';
-  import TimeGrid from '@event-calendar/day-grid';
+  import MonthView from '@event-calendar/day-grid';
+  import WeekView from '@event-calendar/time-grid';
   import Interaction from '@event-calendar/interaction'
   // This is a reference to the component for creating events
   // import CreateEvent from "$lib/components/Create.svelte";
@@ -32,7 +33,7 @@
   }
 
   let cal_inst;
-  let plugins = [TimeGrid, Interaction];
+  let plugins = [MonthView, WeekView, Interaction];
   let options = {
       view: 'dayGridMonth',
       events: [
@@ -42,6 +43,7 @@
       eventClick: onEventClick,
       eventStartEditable: false,
       eventBackgroundColor: '#ffcb82', // This is the default color of events on the calendar
+      headerToolbar: {start: 'dayGridMonth,timeGridWeek', center: 'title', end: 'today prev,next'},
   };
 
   // This function adds a single event to the calendar and the database
@@ -75,4 +77,4 @@
 
 
 <Calendar bind:this={cal_inst} {plugins} {options} on:deleteevent={RemoveEvent}/>
-<button class="btn btn-warning w-32" on:click={AddEvent}>Add Debug Event</button>
+<!-- <button class="btn btn-warning w-32" on:click={AddEvent}>Add Debug Event</button> -->

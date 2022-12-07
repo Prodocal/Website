@@ -10,7 +10,7 @@
 - Marcos Garcia (MarcosGrrcia)
 
 ## Logo
-![Logo](./Website-Frontend/rebuild/frontend/src/lib/assets/logo.png)
+![Logo](./rebuild/frontend/src/lib/assets/logo.png)
 
 ## Description
 A calendar application that is lightweight and streamlined for scheduling.

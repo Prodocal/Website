@@ -1,5 +1,4 @@
 import { error, redirect } from '@sveltejs/kit';
-import { generateUsername } from '$lib/utils';
 
 export const actions = {
 	register: async ({ locals, request }) => {

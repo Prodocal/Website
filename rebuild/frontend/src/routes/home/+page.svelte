@@ -99,7 +99,6 @@
                 
                 <form action="?/addEvent" method="POST">
                     <div class="modal-box">   
-
                         <!-- <label for="info_modal" class="btn btn-sm btn-warning btn-circle absolute right-2 top-2" on:click={ToggleCreationModal}>✕</label>                     -->
                         <div class="form-control">
                             <input type="text" placeholder="Event Title" name="eventName" class="input input-bordered input-info w-full max-w-xs" bind:value={creation_input.title}/>
@@ -109,13 +108,13 @@
                             <!-- Start date selection -->
                             <label class="input-group input-group-md">
                                 <span>Event Start</span>
-                                <DateTimeSelector  name="startDate" endDate={creation_input.end_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.start_date}></DateTimeSelector>
+                                <DateTimeSelector  type="text" name="startDate" endDate={creation_input.end_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.start_date}></DateTimeSelector>
                             </label>
 
                             <!-- End date selection -->
                             <label class="input-group input-group-md">
                                 <span>Event End</span>
-                                <DateTimeSelector name="endDate" startDate={creation_input.start_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.end_date}></DateTimeSelector>
+                                <DateTimeSelector type="text" name="endDate" startDate={creation_input.start_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.end_date}></DateTimeSelector>
                             </label>
 
                             <HsvPicker on:colorChange={ColorSet} startColor={"#ffcb82"}/>

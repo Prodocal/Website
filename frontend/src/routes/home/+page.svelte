@@ -10,8 +10,6 @@
     let showInfoModal = false;
     let showCreationModal = false;
 
-    console.log(data);
-
     // Callback function for the color picker
     function ColorSet(rgba)
     {
@@ -56,8 +54,21 @@
     {
         cal_ref.AddEvent(creation_input);
         ToggleCreationModal();
-        // Not sure what this does
-        close();
+        console.log(data);
+    }
+
+    // Populate the calender with the user events. Called by the calendar's onMount
+    function PopulateCalender()
+    {
+        data.events.forEach((item) => {
+            let event_input = {
+                title: item.eventName,
+                start_date: item.startDate,
+                end_date: item.endDate
+            }
+
+            cal_ref.AddEvent(event_input);
+        });
     }
 
 </script>
@@ -69,7 +80,7 @@
 
     <div class="card w-full bg-base-100 flex justify-center items-center">
             <div class="card-body w-full h-screen overflow-y-auto pb-24">
-                <Calendar bind:this={cal_ref} on:eventclick={ShowEventInfo}/>
+                <Calendar bind:this={cal_ref} on:eventclick={ShowEventInfo} on:loaded={PopulateCalender}/>
             </div>
     </div>
 

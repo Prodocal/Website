@@ -6,11 +6,18 @@
   // This is a reference to the component for creating events
   // import CreateEvent from "$lib/components/Create.svelte";
   import { createEventDispatcher } from 'svelte';
+  import { onMount } from 'svelte';
 
   let selected_date;
 
   const dispatchEC = createEventDispatcher();
+  
+  const dispatchOM = createEventDispatcher();
 
+  onMount(() => {
+    dispatchOM('loaded');
+  });
+  
   // What it sounds like
   function onDateClick(info)
   {
@@ -46,7 +53,7 @@
       headerToolbar: {start: 'dayGridMonth,timeGridWeek', center: 'title', end: 'today prev,next'},
   };
 
-  // This function adds a single event to the calendar and the database
+  // This function adds a single event to the calendar
   export function AddEvent(input)
   {
     let event = {
@@ -61,7 +68,7 @@
     // console.log(event.start);
     // console.log(event.end);
 
-    let cal_event = cal_inst.addEvent(event).start;
+    let cal_event = cal_inst.addEvent(event);
     // console.log(cal_event);
   }
 

@@ -6,14 +6,14 @@ export const load = ({ locals }) => {
         throw redirect(303, '/login')
     }
 
-    const getUsersProjects = async (userId) => {
+    const getUsersEvents = async (userId) => {
 		try {
-			const projects = serializeNonPOJOs(
+			const events = serializeNonPOJOs(
 				await locals.pb.collection('events').getFullList(undefined, {
 					filter: `owningUser = "${userId}"`
 				})
 			);
-			return projects;
+			return events;
 		} catch (err) {
 			console.log('Error: ', err);
 			throw error(err.status, err.message);
@@ -21,7 +21,7 @@ export const load = ({ locals }) => {
 	};
 
 	return {
-		home: getUsersProjects(locals.user.id)
+		events: getUsersEvents(locals.user.id)
 	};
 }
 
@@ -38,9 +38,5 @@ export const actions = {
             console.log('Error: ', err);
             throw error(500, 'Something went wrong')
         }
-
-        
-
-        console.log(projects)
     }
 };

@@ -2,12 +2,15 @@
     import Calendar from "$lib/components/calendar.svelte"
     import DateTimeSelector from 'svelty-picker'
     import {HsvPicker} from 'svelte-color-picker'
+    export let data
 
     let cal_ref;
     let creation_input = {};
     let selected_event = {};
     let showInfoModal = false;
     let showCreationModal = false;
+
+    console.log(data);
 
     // Callback function for the color picker
     function ColorSet(rgba)

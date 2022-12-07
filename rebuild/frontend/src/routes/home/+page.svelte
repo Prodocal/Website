@@ -96,34 +96,34 @@
         {#if showCreationModal} 
             <input type="checkbox" id="creation_modal">
             <div for="modal-box" class="modal modal-open"> 
-                <div class="modal-box">
-                    <label for="info_modal" class="btn btn-sm btn-warning btn-circle absolute right-2 top-2" on:click={ToggleCreationModal}>✕</label>                    
-                    <div class="form-control">
-                        <input type="text" placeholder="Event Title" class="input input-bordered input-info w-full max-w-xs" bind:value={creation_input.title}/>
-                        <input type="text" placeholder="Organization (optional)" class="input input-bordered input-info w-full max-w-xs" bind:value={creation_input.organization}/>
-                        <input type="text" placeholder="Class (optional)" class="input input-bordered input-info w-full max-w-xs" bind:value={creation_input.class}/>
+                
+                <form action="?/addEvent" method="POST">
+                    <div class="modal-box">   
+                        <!-- <label for="info_modal" class="btn btn-sm btn-warning btn-circle absolute right-2 top-2" on:click={ToggleCreationModal}>✕</label>                     -->
+                        <div class="form-control">
+                            <input type="text" placeholder="Event Title" name="eventName" class="input input-bordered input-info w-full max-w-xs" bind:value={creation_input.title}/>
+                            <input type="text" placeholder="Organization (optional)" class="input input-bordered input-info w-full max-w-xs" bind:value={creation_input.organization}/>
+                            <input type="text" placeholder="Class (optional)" class="input input-bordered input-info w-full max-w-xs" bind:value={creation_input.class}/>
 
-                        <!-- Start date selection -->
-                        <label class="input-group input-group-md">
-                            <span>Event Start</span>
-                            <DateTimeSelector inputClasses="form-control" startDate={Date.now()} endDate={creation_input.end_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.start_date}></DateTimeSelector>
-                        </label>
+                            <!-- Start date selection -->
+                            <label class="input-group input-group-md">
+                                <span>Event Start</span>
+                                <DateTimeSelector  type="text" name="startDate" startDate={Date.now()} endDate={creation_input.end_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.start_date}></DateTimeSelector>
+                            </label>
 
-                        <!-- End date selection -->
-                        <label class="input-group input-group-md">
-                            <span>Event End</span>
-                            <DateTimeSelector inputClasses="form-control" startDate={creation_input.start_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.end_date}></DateTimeSelector>
-                        </label>
+                            <!-- End date selection -->
+                            <label class="input-group input-group-md">
+                                <span>Event End</span>
+                                <DateTimeSelector type="text" name="endDate" startDate={creation_input.start_date} format="yyyy-mm-dd hh:ii" bind:value={creation_input.end_date}></DateTimeSelector>
+                            </label>
 
-                        <HsvPicker on:colorChange={ColorSet} startColor={"#ffcb82"}/>
-                        
-                    </div>
-
-                    <div class="modal-action">
-                        <button for="modal-box" class="btn btn-success" on:click={AddEvent}>Create</button>
-                    </div>
-
-                </div>    
+                            <HsvPicker on:colorChange={ColorSet} startColor={"#ffcb82"}/>
+                        </div>
+                        <div class="modal-action">
+                            <button type="submit" for="modal-box" class="btn btn-success">Create</button>
+                        </div>
+                    </div>  
+                </form>
             </div>         
         {/if}
     </div>

@@ -1,5 +1,5 @@
 import PocketBase from 'pocketbase';
-import { serializeNonPOJOs } from '$lib/utils';
+import { serializeNonPOJOs } from '$lib/jshelpers/utils';
 
 export const handle = async ({ event, resolve }) => {
 	event.locals.pb = new PocketBase('http://127.0.0.1:8090');

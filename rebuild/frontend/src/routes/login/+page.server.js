@@ -1,5 +1,4 @@
 import { error, redirect } from '@sveltejs/kit';
-import { generateUsername } from '$lib/utils';
 
 export const actions = {
 	login: async ({ request, locals }) => {
@@ -11,7 +10,5 @@ export const actions = {
 			throw error(500, 'Something went wrong logging in');
 		}
 		throw redirect(303, '/home');
-        console.log("login success");
-        console.log(body.username, body.password);
 	}
 };

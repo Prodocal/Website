@@ -10,10 +10,11 @@ export const actions = {
             console.log('Error: ', err);
             throw error(500, 'Something went wrong')
         }
+        console.log(locals.user.username);
+        console.log(body);
 	},
     editEvent: async ({request, locals}) => {
         const body = Object.fromEntries(await request. formData());
-        
     },
     removeEvent: async ({request, locals}) => {
     }

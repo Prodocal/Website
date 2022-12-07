@@ -32,11 +32,9 @@
 
     dispatchEC('eventclick', info);
 
-    /*let event_ref = info.event;
-    console.log(event_ref.title);*/
-
-    // For testing it just removes the event
-    /*cal_inst.removeEventById(event_ref.id);*/
+    // DEBUGGING STUFF
+    // let event_ref = info.event;
+    // console.log(event_ref.id);
   }
 
   let cal_inst;
@@ -57,7 +55,7 @@
   export function AddEvent(input)
   {
     let event = {
-      // id: 69,
+      id: input.id,
       title: input.title,
       start: input.start_date,
       end: input.end_date,

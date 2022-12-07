@@ -4,6 +4,9 @@
     import {HsvPicker} from 'svelte-color-picker'
     export let data
 
+    // DEBUG
+    // console.log(data.events);
+
     let cal_ref;
     let creation_input = {};
     let selected_event = {};
@@ -64,7 +67,8 @@
             let event_input = {
                 title: item.eventName,
                 start_date: item.startDate,
-                end_date: item.endDate
+                end_date: item.endDate,
+                id: item.id
             }
 
             cal_ref.AddEvent(event_input);

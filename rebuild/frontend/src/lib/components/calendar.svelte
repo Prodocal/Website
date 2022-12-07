@@ -77,4 +77,4 @@
 
 
 <Calendar bind:this={cal_inst} {plugins} {options} on:deleteevent={RemoveEvent}/>
-<button class="btn btn-warning w-32" on:click={AddEvent}>Add Debug Event</button>
+<!-- <button class="btn btn-warning w-32" on:click={AddEvent}>Add Debug Event</button> -->

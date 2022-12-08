@@ -38,5 +38,18 @@ export const actions = {
             console.log('Error: ', err);
             throw error(500, 'Something went wrong');
         }
+    },
+    deleteEvent: async ({ request, locals }) => {
+        const { id } = Object.fromEntries(await request.formData())
+        try {
+            await locals.pb.collection('events').delete(id);
+        }
+        catch (err) {
+            console.log('Error: ', err);
+            throw error(err.status, err.message);
+        }
+        return {
+            success: true
+        };
     }
 };

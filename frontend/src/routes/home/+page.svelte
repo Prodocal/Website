@@ -101,9 +101,12 @@
                     <p class="py-4"> Start Date: {selected_event.start}</p>
                     <p class="py-4"> End Date: {selected_event.end}</p>
 
+                    <form action="?/deleteEvent" method="POST">
                     <div class="modal-action">
-                        <button for="modal-box" class="btn btn-error" on:click={RemoveEvent}>Delete</button>
+                        <input type="hidden" name="id" value={selected_event.id}/>
+                        <button type="submit" for="modal-box" class="btn btn-error">Delete</button>
                     </div>
+                </form>
                 </div>    
             </div>         
         {/if}

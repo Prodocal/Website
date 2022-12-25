@@ -17,9 +17,9 @@ A calendar application that is lightweight and streamlined for scheduling.
 
 ## Instructions
 ### For a local run of the application:
-1. Download the rebuild repository
-2. Go into rebuild/backend and run './pocketbase.exe serve' (for Windows) or './pocketbase serve' (for Mac)
-3. Go into rebuild/frontend and type in 'npm install' to install all requirements
+1. Download the Website-Frontend repository
+2. Go into database and run './pocketbase.exe serve' (for Windows) or './pocketbase serve' (for Mac)
+3. Go into frontend and type in 'npm install' to install all requirements
 4. Once all packages have been installed, type 'npm run dev -- --open' to open the application
 
 ### Usage:

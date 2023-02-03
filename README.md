@@ -1,7 +1,7 @@
 # ProdoCal
 
 ## Members
-- Akash Kumar (apramodk)
+- Akash Pramod Kumar (apramodk)
 - Ricky Lau (ritoxyapher)
 - Mason Stott (mstott3)
 - Alex Yu (tehwarriorfesh)
